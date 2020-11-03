@@ -1,0 +1,161 @@
+---
+title: "A Short Profiling Story"
+date: 2020-11-03T11:42:42.000Z
+draft: false
+description: "Using profiling tools to understand and debug memory usage"
+tags:
+  - elixir
+  - software development
+---
+
+While transcribing
+[[https://www.elixirconf.eu/talks/The-Perils-of-Large-Files/][the talk I
+gave at the last ElixirConf.eu]] conference, one of my colleagues
+pointed out that I glossed over the details of one of the examples. This
+prompted me to do some digging and I want to share what I found.
+
+** The problem
+   :PROPERTIES:
+   :CUSTOM_ID: the-problem
+   :END:
+
+The example in question is a module responsible to fetch a file from a
+remote source and write it at the specified path.
+
+The implementation is very simplistic and lacks both error handling and
+retry logic.
+
+#+BEGIN_SRC elixir
+  defmodule Perils.Examples.Store do
+     def write(file_name, url) do
+       with {:ok, data} <- get(url) do
+         File.write!(file_name, data)
+       end
+     end
+
+     defp get(url) do
+       :httpc.request(:get, {String.to_charlist(url), []}, [], [])
+       |> case do
+         {:ok, result} ->
+           {{_, 200, _}, _headers, body} = result
+           {:ok, body}
+
+         error ->
+           error
+       end
+     end
+   end
+#+END_SRC
+
+Looking at the code, we can see that it relies on =:httpc=, the http
+client that ships with Erlang/OTP.
+
+Both in my talk and in the initial transcription draft, I pointed out
+that running this code with a 12MB file would result in a memory usage
+peak at around 350/375MB, but didn't really look into why.
+
+{{< image src="/img/a-short-profiling-story/before.png" alt="A chart visualizing a 350MB memory spike" >}}
+
+Such delta between the file size and peak memory usage is suspicious and
+worth investigating.
+
+** The investigation
+   :PROPERTIES:
+   :CUSTOM_ID: the-investigation
+   :END:
+
+I started by setting up an [[https://github.com/parroty/exprof][exprof]]
+test, so that I could profile resource usage associated with the
+problematic function.
+
+#+BEGIN_SRC elixir
+  defmodule A do
+    import ExProf.Macro
+
+    def run(url) do
+      profile do
+        Perils.Examples.Store.write("magazine.pdf", url)
+      end
+    end
+  end
+
+  url = "https://web-examples.pspdfkit.com/magazine/example.pdf" #12MB
+  {records, _block_result} = A.run(url)
+  total_percent = Enum.reduce(records, 0.0, &(&1.percent + &2))
+  IO.inspect("total = #{total_percent}")
+#+END_SRC
+
+The result (with some lines omitted) shows that most of the time
+(51.74%) is spent converting the binary response body to a list inside
+the =maybe_format_body/2= function:
+
+#+BEGIN_EXAMPLE
+  FUNCTION                                             CALLS        %    TIME  [uS / CALLS]
+  --------                                             -----  -------    ----  [----------]
+  <omitted>
+  erlang:iolist_to_binary/1                                1    20.46   49705  [  49705.00]
+  erlang:binary_to_list/1                                  1    27.54   66887  [  66887.00]
+  httpc:maybe_format_body/2                                1    51.74  125664  [ 125664.00]
+#+END_EXAMPLE
+
+While this is not an indication of higher memory usage per se, it's a
+good lead: binary to list conversion can be memory intensive.
+
+I then looked at the
+[[https://github.com/erlang/otp/blob/3f21ce1e6a5d6c548867fa4bc9a8c666c626ade1/lib/inets/src/http_client/httpc.erl#L655-L661][source
+for =maybe_format_body/2=]], making sure to match on the OTP version I
+tested against (23.1.1).
+
+#+BEGIN_SRC erlang
+  maybe_format_body(BinBody, Options) ->
+      case proplists:get_value(body_format, Options, string) of
+           string ->
+               binary_to_list(BinBody);
+           _ ->
+               BinBody
+      end.
+#+END_SRC
+
+As expected, the function uses =binary_to_list/1= to transform the
+response binary body into a list. Luckily, this behaviour can be tweaked
+via the =body_format= option, which defaults to =string= (as in Erlang
+string, which maps to a character list in Elixir).
+
+Searching for =body_format= in
+[[http://erlang.org/doc/man/httpc.html#request-5][the Erlang docs for
+=request/5=]] shows that indeed it's possible to tweak our problematic
+implementation to:
+
+#+BEGIN_SRC elixir
+  :httpc.request(:get, {String.to_charlist(url), []}, [], body_format: :binary)
+#+END_SRC
+
+With this change, memory usage decreases dramatically, showing a delta
+only slightly larger than the file size.
+
+{{< image src="/img/a-short-profiling-story/after.png" alt="A chart visualizing a 15MB memory spike" >}}
+
+** Conclusion
+   :PROPERTIES:
+   :CUSTOM_ID: conclusion
+   :END:
+
+This whole investigation got me thinking, as the =body_format= option
+had been in the docs all along, yet I hadn't seen it. I can find three
+reasons:
+
+1. The overall logic in the example doesn't really care about the
+   response body contents, as it just writes them to a file. Without
+   seeing that response, there was no way for me to even notice its
+   type.
+2. =File.write/2= accepts binaries, strings and character lists - again
+   I didn't have a reason to even wonder about the type used to
+   represent that returned response body.
+3. Working primarily in Elixir, everything tends to be either a string
+   or a binary. I just "forget" that character lists exist, which lead
+   to the implicit assumption that this would be the default for
+   =:httpc=.
+
+In other words, I didn't know what to search in the docs. Profiling
+tools helped me understand the problem space and pointed me in the right
+direction.
