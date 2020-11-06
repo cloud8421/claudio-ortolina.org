@@ -1,0 +1,242 @@
+---
+title: "Fish"
+date: 2020-11-06T12:28:16Z
+draft: false
+description: An introduction to one of my favourite artists of all time
+tags:
+  - music
+---
+
+** Prelude
+
+I have very early memories of rock music in my life. Since I was a toddler, my parents (and particularly my dad) got me used to listen to 80s rock music. Bands like Queen, Guns N' Roses, AC/DC, Van Halen, and Bon Jovi are ingrained in my memories as sounds of my childhood.
+
+It's not surprising that my taste in music has developed from there, branching out over the years in metal and progressive rock. Music is a constant companion of my daily life and contributed to the formation of my identity.
+
+My taste changed and adapted: around ten years ago I was dismissing [[https://en.wikipedia.org/wiki/Operation:_Mindcrime][/Operation: Mindcrime/]] by [[https://en.wikipedia.org/wiki/Queensrÿche][Queensrÿche]] as a mediocre album, but two years ago I picked it up again and it was a revelation. Something similar happened while listening to [[https://en.wikipedia.org/wiki/Rage_Against_the_Machine][Rage Against the Machine]], [[https://en.wikipedia.org/wiki/Tool][Tool]] or [[https://en.wikipedia.org/wiki/A_Perfect_Circle][A Perfect Circle]], didn't like them years ago, absolutely love them now.
+
+This change got me thinking - why do these bands resonate with me now?
+
+I think the answer lies primarily in the integrity of the message connected to these bands: their perspective, political stance, perspective on life really struck a cord with me in my 30s. They take an explicit position around issues I care about.
+
+** Enter Marillion and Fish
+
+{{< image src="/img/fish/fish-photo.jpg" alt="Fish's portrait" style="float: left; margin-right: 1rem;" >}}
+
+Until a year ago, I had a very cursory knowledge of [[https://en.wikipedia.org/wiki/Marillion][Marillion]]'s body of work. I kney they existed, that they have a substantial discography and that they represent an important page in the history of 80s and 90s prog.
+
+One morning, Spotify's suggestions algorithm decided to play [[https://www.youtube.com/watch?v=lalBmbrWEvQ][/Incommunicado/]] and [[https://www.youtube.com/watch?v=6COmtBk6lYo][/Sugar Mice/]] in the space of an hour. I found myself stopping what I was doing in both instances - there was something about those songs that really dragged my attention. I loved the music - but the lyrics stopped me in my tracks.
+
+/Incommunicado/ is about ambition, the drive to make it big without taking responsibilities. In the context of the entire album, it's both a metaphor for the difficult life of Torch, the main character whose life is falling to pieces, but also a direct description of the music business.
+
+/Sugar Mice/ is a song about the devastating effects of unemployment and economic recession. The title refers to a popular english sweet made of sugar. The main refrain "We're just sugar mice in the rain" gives a very vivid representation of how fragile life can be.
+
+The words, references, and metaphors included in the lyrics stood out as something completely out of the ordinary - it _sounded_ like poetry.
+
+The more I explored other Marillion's songs, the more I realized that what really resonated with me was [[https://en.wikipedia.org/wiki/Fish_(singer)][Fish]], their initial singer and lyricist. Following his body of work after he left Marillion, I kept finding incredible songs.
+
+** Love and relationships
+
+#+begin_quote
+Do you remember?\\
+Barefoot on the lawn with shooting stars\\
+Do you remember?\\
+The loving on the floor in Belsize Park\\
+Do you remember?\\
+Dancing in stilettoes in the snow\\
+Do you remember?\\
+You never understood I had to go\\
+By the way, didn't I break your heart?\\
+Please excuse me, I never meant to break your heart\\
+So sorry, I never meant to break your heart\\
+But you broke mine --- /Kayleigh, 1985/
+#+end_quote
+
+By far the most succesful Marillion song, /Kayleigh/ is often cited as Fish's apology to different women for the failure of their romantic relationships, a collage of vivid images and melancholic moments.
+
+To me, this song sows the seeds of a theme that goes through a few songs written by Fish: work/life balance. Relationships fail when you divert your attention away from them, when you don't put in everyday work to keep them going.
+
+In /Zoë 25/ it's the aftermath of another relationship that didn't go well:
+
+#+begin_quote
+When you're looking for somebody, you might not even see them, \\
+When they're standing there in front of you, right before your eyes, \\
+If you're looking for somebody you're gonna need some help, \\
+You know you'll never find her when you're looking for yourself. --- /Zoë 25, 2007/
+#+end_quote
+
+In /Garden of Remembrance/, it's Alzheimer's disease, something completely outside our control:
+
+#+begin_quote
+He's lost between the here and now\\
+Somewhere that he can't be found\\
+She's still here\\
+Her love a ghost of memory\\
+She'll wait for an eternity\\
+He's still here --- /Garden of Remembrance, 2020/
+#+end_quote
+
+In /cliche/, the song lyrics use estabilished cliches to acknowledge that no matter how much hard you try, sometimes the simplest thing you can say is what matters.
+
+#+begin_quote
+That's why I'm trying to say with my deepest sincerity\\
+That's why I'm finding it comes down to the basic simplicities\\
+The best way is with an old cliche\\
+It's simply the best way is with an old cliche\\
+Always the best way is with an old cliche\\
+I'll leave it to the best way, it's an old cliche\\
+I love you. --- /Cliche, 1990/
+#+end_quote
+
+In /Punch and Judy/[fn:1] it's the progressive deterioration of a relationship, escalating in murdering fantasies:
+
+#+begin_quote
+Whatever happened to morning smiles,\\
+Whatever happened to wicked wiles, permissive styles,\\
+Whatever happened to twinkling eyes,\\
+Whatever happened to hard fast drives,\\
+Complements on unnatural size
+
+Punch, Punch, Punch And Judy, Punch, Punch, Punch And Judy\\
+Punch, Punch, Punch And Judy.
+
+Propping up a bar, family car,\\
+Sweating out a mortgage as a balding clerk,\\
+Punch And Judy, [Judy]\\
+World war three, suburbanshee,\\
+Just slip her these pills and I'll be free.
+
+No more Judy, Judy. Judy no more! Goodbye Judy! --- /Punch and Judy, 1984/
+#+end_quote
+
+** Living on your own terms
+
+Another recurring topic is the idea of living on your own terms. From /Tongues/, where Fish lets out the frustration of dealing with lawyers during a very long lawsuit with music publisher EMI:
+
+#+begin_quote
+Your entrenched opinions,\\
+On the border of arrogance,\\
+Dug in against the compromise.\\
+A position indefensible, your actions illogical\\
+You're speaking in tongues
+
+You swear contradictions\\
+Your tedious monologues, wielding authority,\\
+Demanding subservience, demanding\\
+I make your sense.\\
+Demanding speaking in tongues. --- /Tongues, 1991/
+#+end_quote
+
+The inability to speak the same language becomes a massive blocker. The aforementioned lawsuit with EMI ended up being a fundamental event in Fish's life, pushing him to pursue the ownership of all rights of his solo albums (except the first one, /Vigil in a Wilderness of Mirrors/).
+
+In /Circle Line/[fn:2], it's the awareness of the 9-to-5 grind that is imposed on the majority of us:
+
+#+begin_quote
+9 to 5's the only time I try to kid myself that I'm still alive,\\
+That I'm living out the dream to earn my freedom from this rat race\\
+Where all I do's survive, I live the lie, I serve my time.
+
+The circle line.
+
+Just another day, just another day, just another day,\\
+Just another day, just another day, just another day on the circle line.
+
+The circle line, on the circle line. --- /Circle Line, 2007/
+#+end_quote
+
+/Lost Plot/, on losing track of what matters:
+
+#+begin_quote
+I was blinded by light but the vision had died, I'd forgotten\\
+In time just what I was fighting for\\
+I'd forgotten who's side I was on, the difference between\\
+Right and wrong\\
+I was out of my depth, going out of my mind, going down in\\
+A field where no prisoners are taken, no quarter is given\\
+The writing was small, it burned on the wall, I'd sold out\\
+My soul for what it was worth\\
+I'd lost the plot, my number was up, the game was over\\
+Snakes and ladders, a world of snakes and ladders, snakes\\
+And ladders --- /Lost Plot, 2004/
+#+end_quote
+
+/View from the Hill/, where we the hill is an endless collection of things that don't matter and just keep us imprisoned.
+
+{{< figure src="/img/fish/the-hill.jpg" position="center" alt="Illustration of the Hill, one of the main metaphors in the album Vigil in a Wilderness of Mirrors" caption="Artwork for the album of Vigil in the Wilderness of Mirrors, by Mark Wilkinson" >}}
+
+#+begin_quote
+You sit and think that everything is coming up roses\\
+But you can't see the weeds that entangle your feet\\
+You can't see the wood for the trees 'cause the forest is burning\\
+And you say it's the smoke in your eyes that's making you cry
+
+They sold you the view from a hill\\
+They told you that the view from the hill would be\\
+Further than you have ever seen before\\
+They sold you a view from a hill\\
+They sold you a view from a hill --- /View from the Hill, 1990/
+#+end_quote
+
+
+** The system has failed (us)
+
+Fish has never shied away from commenting on politics: from /Market Square Heroes/ (Marillion's first single) to /Weltschmerz/, the ending track of his latest (and last) album.
+
+/Market Square Heroes/[fn:3] is once again an anthem of an angry generation that suffers the consequences of austerity and recession:
+
+#+begin_quote
+I give peace signs when I wage war in the disco\\
+I'm the warrior in the ultra violet haze\\
+Armed with antisocial insecurity\\
+I plan the path of destiny from this maze
+
+Cause I'm a Market Square hero gathering the storms to troop\\
+Cause I'm a Market Square hero speeding the beat of the street pulse\\
+Are you following me, are you following me?\\
+Well suffer my fallen angels and follow me\\
+I'm the Market Square hero, I'm the Market Square hero\\
+We are Market Square Heroes, to be Market Square Heroes --- /Market Square Heroes, 1982/
+#+end_quote
+
+/Weltschmerz/ is a summary of all fights worth fighting - from climate change, to poverty, to the general failure of a political system that emphasized polarisation and division:
+
+#+begin_quote
+I am a grey bearded warrior, a poet of no mean acclaim\\
+My words are my weapons that I proffer with disdain\\
+My melancholy aspect is something you can’t disregard\\
+My motives you cannot question nor my strong sense of right and wrong\\
+
+I’ve formed the opinion that things can’t stay as they are\\
+My anger and my fury trapped like a wasp in a jar\\
+It’s never too late to make a brave new start\\
+When the revolution is called I will play my part --- /Weltschmerz, 2020/
+#+end_quote
+
+** Perfume River
+
+In /Perfume River/[fn:4], we look at the consequences of the Vietnam War, whose images are burned in Fish's childhood memory.
+
+{{< figure src="/img/fish/feast-of-consequences.jpg" position="center" alt="Artwork for the album Feast of Consequences" caption="Artwork for the album Feast of Consequences by Mark Wilkinson" >}}
+
+#+begin_quote
+Fire breathing dragons swarm in sweltering skies, spewing flame on innocents below\\
+Charred and brittle corpses, blackened evidence, I am enraged, I am afraid, I am forlorn\\
+The ashes from wise pages fly from libraries, tumble in the clouds of smoke and flies\\
+To lie as dust in corners of dark palaces, the fetid smell of revolution haunts the air.
+
+Take me away to the Perfume River; carry me down to the perfume river\\
+Set me adrift on a well-stocked open boat\\
+Show me the way to the Perfume River, send me away down the perfume river\\
+Pour that sweet, sweet liquor down my throat; pour it down my throat --- /Perfume River, 2013/
+#+end_quote
+
+Once again, the images evoked are incredibly strong, full of colour - red flames and rage, smoke, dust and death.
+
+** Visuals
+
+A powerful ingredient in Fish's artistic work has always been his collaboration with [[https://www.the-masque.com/mainpage.html][Mark Wilkinson]], who illustrated all Marillion's albums (until Fish left the band) and all of Fish's work. His surrealistic style is unmistakable and perfectly complements the "visual" nature of a lot of Fish's songs.
+
+[fn:1] The title refers to Punch and Judy, the main characters of a puppet show popular in British culture. See [[https://en.wikipedia.org/wiki/Punch_and_Judy][the Wikipedia page for more information.]] 
+[fn:2] The Circle Line is one of London's Underground lines.
+[fn:3] The title is both a reference to a market square in Ailesbury, an english town, and Nietzsche's [[https://sourcebooks.fordham.edu/mod/nietzsche-madman.asp][Parable of the Madman]].
+[fn:4] The title refers to a river running through the city of Huế in Vietnam, one of the cities deeply affecte by the Vietnam War.
