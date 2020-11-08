@@ -1,0 +1,72 @@
+---
+title: "A Piece of History"
+description: "Telling a story so that it's not forgotten"
+date: 2020-11-07T17:48:08Z
+draft: false
+tags:
+  - history
+---
+
+I grew up in Italy in Pioltello, a small town near Milan - most likely, you haven't heard about it. My family history is for the most part pleasantly unremarkable: hard-working people, leading "normal" lives. At least that's what I thought until my uncle Alberto told me the story of my grandpa's uncle, Francesco Sparti, merging together the accounts of Nadila[fn:nadila], Francesco's daughter, and my grandpa's own account.
+
+** Early life
+
+{{< image src="/img/a-piece-of-history/francesco.jpg" alt="Francesco's portrait" style="float: left; margin-right: 1rem;" >}}
+
+Francesco was born on February 28, 1894. Like many people of his generation, he quickly got involved in politics and joined the Italian Socialist Party in 1914, opening Pioltello's chapter in the same year.
+
+When hell broke loose in 1915 and World War I started, he was drafted to fight in the [[https://en.wikipedia.org/wiki/Karst_Plateau][Karst Plateau]], where he remained until 1917. Conditions on the [[https://en.wikipedia.org/wiki/Battles_of_the_Isonzo][Isonzo Front]] where particularly hostile: the Austro-Hungarian forces had already fortified the surrounding mountains, forcing the italian troops to make their stand around the [[https://en.wikipedia.org/wiki/Soča][Soča]] river, which was not particularly suitable for positional warfare. With the river prone to floods and the terrain around formed of shallow soil over a limestone bedrock, digging trenches was almost impossible.
+
+Over the course of two years, [[https://en.wikipedia.org/wiki/Battles_of_the_Isonzo#Number_of_battles][twelve battles were fought]], with the italian army only able to gain a mile over the Austro-Hungarian before being defeated at Caporetto in November 1917.
+
+{{< figure src="/img/a-piece-of-history/battle-of-caporetto.jpg" position="center" alt="Map of Northern Italy, with military lines describing troop movements after the defeat of Caporetto" caption="Map of the Battle of Caporetto, with red lines indicating the progression of the Austro-Hungarian army" >}}
+
+After the defeat, Francesco was transferred and finally dismissed in 1919, wounded and affected by tubercolosis. He then managed to get back to Pioltello, where he resumed his political endeavours.
+
+** From Mayor to fugitive
+
+Italy was going through dramatic changes - 1919 and 1920 are pivotal years in the meteoric rise of Benito Mussolini's fascist[fn:fascist-movement] movement, with the foundation of the first squads aimed at violent reprisal against the fragmented socialist government[fn:squadrismo].
+
+Francesco was directly impacted by these events: being the secretary of the Socialist Party in Pioltello, he was quickly targeted by local squads and beaten up (along with other local figures from the same party). Despite this, he stood as a candidate in the local administrative elections, and became Pioltello's mayor in 1920.
+
+Francesco was a controversal mayor: as a socialist, he was absolutely fierce and openly in conflict with the local vicar, Don Gaetano Motta, who was also representing the [[https://en.wikipedia.org/wiki/Italian_People%27s_Party_(1919)][Italian People's Party (PPI)]]. This antagonism lead to episodes of threat and violence, culminating, on September 29, 1920, into an altercation that ended with Don Motta firing 6 shots from his Beretta gun against his aggressors. A 19 year old, Francesco Selvatico, was fatally wounded and died the day after in the hospital.
+
+The subsequent trial saw Don Motta being declared innocent as he had acted in self-defence. Another attenuating circumstance was the Don Motta had endured over time multiple episodes of violence, some of which including Francesco himself.
+
+At the same time, Francesco was a mayor that prioritised the agricultural working class, personally helping a lot of people struggling to make ends meet and positioning him as a local Robin Hood. His actions were sometimes outside the realm of what he was legally allowed to do, something that caused him some reprimends from the province prefect.
+
+The following years saw the transformation of the fascist movement into a full-fledged party, the National Fascist Party (PNF), with 300.000 subscribers. Being primarily centerd around Milan, it was a matter of time before Francesco started to feel the pressure: in 1922, a royal decree stripped him of his role of mayor.
+
+In the same year (September 25), he got shot in the leg during an attack to a local union by fascist squads.
+
+On October 31, 1922, squads get to his house, in the /Corte della Pesa/[fn:corte-della-pesa] [[https://en.wikipedia.org/wiki/Courtyard][courtyard]].
+
+{{< figure src="/img/a-piece-of-history/palazzo-della-pesa.jpg" position="center" alt="A black and white photo of Corte della Pesa, showing houses around a courtyard" caption="Corte della Pesa as it looked <br/>at the beginning of the XX century" >}}
+
+All of his belongings, furniture and bed were taken out and burned in the court - leaving him only with his clothes.
+
+The same night, Francesco and his brother Luciano (16 at the time) tried to escape the town via a side road ditch, but got intercepted near the border with the countryside. When the squads started opening fire, the two got separated. Luciano managed to hide in the countryside and eventually make his way back into the town. Tired and confused, Luciano reached a common friend, Mr. Rigorni, and found Francesco there completely by chance, not knowing that it would be the last time they would see each other.
+
+Mr. Rigorni tried to accompany Luciano home, but once again squads intervened and took Luciano for interrogation, with the aim of having him reveal where his brother had gone.
+
+Luciano was about to be administered castor oil, [[https://en.wikipedia.org/wiki/Castor_oil#Punishment][a common punishment in fascist times]], but his sister's intervetion prevented this from happening. He was then taken to the countryside and threatened at gunpoint first, then slapped on his face. Taken back to the town, he was ordered to show up every day to PNF headquarters until he spilled the beans on his brother.
+
+The events of that night took a toll on him - the initial narrow escape via the ditch had left him drenched and feverish and his mother managed to convince the squads to pity him and leave him alone.
+
+In the meantime, Francesco had to move, spending 1923 in Milan. In 1924, two arrest warrants emitted by the fascist regime forced him to flee to Turin and assume a new identity.
+
+** The Turin exile
+
+
+
+
+
+
+
+[fn:nadila] As recalled in an interview included in the book: Guido Calcavecchia, Daniela Milanesi, Fiorenza Pistocchi, Mimma Spanu. /I sbarbàa e i tosànn che fecero la Repubblica. Fatti, storie, documenti dal primo dopoguerra alla liberazione a Pioltello/, 2006, ISBN 88-8391-187-3
+
+[fn:fascist-movement] Note that at this point in time - the word "fascist" referred to the main symbol used by the movement, the so-called "Fascio littorio" (more information [[https://en.wikipedia.org/wiki/Fascist_symbolism#Italy][on Wikipedia]]). The current use of the word to indicate a far-right, oppressive regime has its origins in this very movement.
+
+[fn:squadrismo] See the history of [[https://en.wikipedia.org/wiki/Squadrismo][Squadrismo]].
+
+[fn:corte-della-pesa] The bedroom I had when I lived with my parents faced the back of the /Corte della Pesa/ - making the internal courtyard completely invisible to me. I often wondered, as a kid, what was it like to live there, especially when I heard about a rumour of a secret tunnel starting there and going for a couple of miles to the countryside, used by partisans to escape the fascist squads.
