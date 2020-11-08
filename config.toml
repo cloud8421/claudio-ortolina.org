@@ -1,12 +1,13 @@
 baseURL = "http://claudio-ortolina.org/"
 languageCode = "en-gb"
 title = "Claudio Ortolina"
-theme = "terminal"
+theme = "hello-friend"
 paginate = 5
 
 [params]
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
+  contentTypeName = "posts"
+  defaultTheme = "light"
+  showReadingTime = true
 
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 3
