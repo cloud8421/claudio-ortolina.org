@@ -13,7 +13,7 @@ I grew up in Italy in Pioltello, a small town near Milan - most likely, you have
 
 {{< image src="/img/a-piece-of-history/francesco.jpg" alt="Francesco's portrait" style="float: left; margin-right: 1rem;" >}}
 
-Francesco was born on February 28, 1894. Like many people of his generation, he quickly got involved in politics and joined the Italian Socialist Party in 1914, opening Pioltello's chapter in the same year.
+Francesco was born on February 28, 1894. Like many people of his generation, he quickly got involved in politics and joined the Italian Socialist Party (PSI) in 1914, opening Pioltello's chapter in the same year.
 
 When hell broke loose in 1915 and World War I started, he was drafted to fight in the [[https://en.wikipedia.org/wiki/Karst_Plateau][Karst Plateau]], where he remained until 1917. Conditions on the [[https://en.wikipedia.org/wiki/Battles_of_the_Isonzo][Isonzo Front]] where particularly hostile: the Austro-Hungarian forces had already fortified the surrounding mountains, forcing the italian troops to make their stand around the [[https://en.wikipedia.org/wiki/Soča][Soča]] river, which was not particularly suitable for positional warfare. With the river prone to floods and the terrain around formed of shallow soil over a limestone bedrock, digging trenches was almost impossible.
 
@@ -29,9 +29,13 @@ Italy was going through dramatic changes - 1919 and 1920 are pivotal years in th
 
 Francesco was directly impacted by these events: being the secretary of the Socialist Party in Pioltello, he was quickly targeted by local squads and beaten up (along with other local figures from the same party). Despite this, he stood as a candidate in the local administrative elections, and became Pioltello's mayor in 1920.
 
-Francesco was a controversal mayor: as a socialist, he was absolutely fierce and openly in conflict with the local vicar, Don Gaetano Motta, who was also representing the [[https://en.wikipedia.org/wiki/Italian_People%27s_Party_(1919)][Italian People's Party (PPI)]]. This antagonism lead to episodes of threat and violence, culminating, on September 29, 1920, into an altercation that ended with Don Motta firing 6 shots from his Beretta gun against his aggressors. A 19 year old, Francesco Selvatico, was fatally wounded and died the day after in the hospital.
+When in 1921 the Italian Communist Party (PCI) was founded after seceding from the PSI, Francesco immediately joined.
+
+Francesco was a radical mayor: as a communist, he was absolutely fierce and openly in conflict with the local vicar, Don Gaetano Motta, who was also representing the [[https://en.wikipedia.org/wiki/Italian_People%27s_Party_(1919)][Italian People's Party (PPI)]]. This antagonism lead to episodes of threat and violence, culminating, on September 29, 1920, into an altercation that ended with Don Motta firing 6 shots from his Beretta gun against his aggressors. A 19 year old, Francesco Selvatico, was fatally wounded and died the day after in the hospital.
 
 The subsequent trial saw Don Motta being declared innocent as he had acted in self-defence. Another attenuating circumstance was the Don Motta had endured over time multiple episodes of violence, some of which including Francesco himself.
+
+In addition, Francesco tried to take down crucifixes from the local, church-managed preschool[fn:preschool], and even got to the point of sending secular teachers who would replace nuns. His attempt was stopped by the prefect and only made him an even larger target.
 
 At the same time, Francesco was a mayor that prioritised the agricultural working class, personally helping a lot of people struggling to make ends meet and positioning him as a local Robin Hood. His actions were sometimes outside the realm of what he was legally allowed to do, something that caused him some reprimends from the province prefect.
 
@@ -55,18 +59,18 @@ The events of that night took a toll on him - the initial narrow escape via the 
 
 In the meantime, Francesco had to move, spending 1923 in Milan. In 1924, two arrest warrants emitted by the fascist regime forced him to flee to Turin and assume a new identity.
 
-** The Turin exile
+** Life in Turin
 
+Francesco would spend the next twenty years away from Pioltello.
 
-
-
-
-
+In 1924, he had a brief stint with the police, who didn't recognise him. Despite escaping arrest, he lost his job, forcing him to seek fortune NW of Turin, in Varese, where he was also treated for his tubercolosis. In 1926, he was attacked by a squad of 50 people while he was treated in the /Cuasso al Monte/ hospital, trying to make a narrow escape to the mountains. Wounded, he was arrested and detained for a month in Varese's penitentiary. After his release, he was forbidden to step foot in the borders of the province and forced to make his way back to Turin, where he would remain until 1945.
 
 [fn:nadila] As recalled in an interview included in the book: Guido Calcavecchia, Daniela Milanesi, Fiorenza Pistocchi, Mimma Spanu. /I sbarbàa e i tosànn che fecero la Repubblica. Fatti, storie, documenti dal primo dopoguerra alla liberazione a Pioltello/, 2006, ISBN 88-8391-187-3
 
 [fn:fascist-movement] Note that at this point in time - the word "fascist" referred to the main symbol used by the movement, the so-called "Fascio littorio" (more information [[https://en.wikipedia.org/wiki/Fascist_symbolism#Italy][on Wikipedia]]). The current use of the word to indicate a far-right, oppressive regime has its origins in this very movement.
 
 [fn:squadrismo] See the history of [[https://en.wikipedia.org/wiki/Squadrismo][Squadrismo]].
+
+[fn:preschool] That very same preschool, /Asilo Gorra/, still exists and operates: I attended it myself in the late 80s, and while still being managed by the Catholic Church, it would emply both nuns and secular teachers.
 
 [fn:corte-della-pesa] The bedroom I had when I lived with my parents faced the back of the /Corte della Pesa/ - making the internal courtyard completely invisible to me. I often wondered, as a kid, what was it like to live there, especially when I heard about a rumour of a secret tunnel starting there and going for a couple of miles to the countryside, used by partisans to escape the fascist squads.
