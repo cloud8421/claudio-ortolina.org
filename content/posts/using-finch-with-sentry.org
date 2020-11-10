@@ -1,0 +1,70 @@
+---
+title: "Using Finch With Sentry"
+date: 2020-11-10T08:41:30Z
+draft: false
+description: "How to setup Sentry to use the Finch HTTP Client"
+tags:
+  - elixir
+  - software development
+---
+
+A few weeks ago I added enabled support for [[https://sentry.io][Sentry]] inside [[https://github.com/fully-forged/tune][Tune]], my Spotify browser/client. Even if I'm pretty much the only user (I built it for myself after all), having exception tracking has already proved to be useful - band and song names can really create all sorts of issues.
+
+The [[https://hex.pm/packages/sentry][official Sentry package]] works as advertised and by default it communicates using [[https://hex.pm/packages/hackney][Hackney]] as a http client. As I've been using [[https://hex.pm/packages/finch][Finch]] in the project, I was pleased to see that Sentry exposed a ~client~ configuration option that allowed using your own module, as long as it implemented the ~Sentry.HTTPClient~ behaviour.
+
+The advantage in swapping the http client library (on top of uniforming the building blocks of the application) is that Finch has support for [[https://hex.pm/packages/telemetry][Telemetry]] metrics.
+
+The module I wrote is quite short:
+
+#+begin_src elixir
+defmodule Sentry.FinchClient do
+  @moduledoc """
+  Defines a small shim to use `Finch` as a `Sentry.HTTPClient`.
+  """
+
+  @behaviour Sentry.HTTPClient
+
+  def child_spec do
+    opts = [name: Sentry.Finch]
+
+    Supervisor.child_spec(
+      %{
+        id: __MODULE__,
+        start: {Finch, :start_link, [opts]},
+        type: :supervisor
+      },
+      []
+    )
+  end
+
+  def post(url, headers, body) do
+    request = Finch.build(:post, url, headers, body)
+
+    case Finch.request(request, Sentry.Finch) do
+      {:ok, response} ->
+        {:ok, response.status, response.headers, response.body}
+
+      error ->
+        error
+    end
+  end
+end
+#+end_src
+
+The trickiest bit was to get the ~child_spec/0~ callback right while keeping [[https://erlang.org/doc/man/dialyzer.html][dialyzer]] happy. The first implementation I wrote was simply ~{Finch, name: Sentry.Finch}~, but that would fail to satisfy [[https://hexdocs.pm/sentry/Sentry.HTTPClient.html#c:child_spec/0][the typespec defined for ~child_spec/0~]]. This version, albeit more verbose, returns the correct type.
+
+I also updated my production configuration:
+
+#+begin_src elixir
+config :sentry,
+  dsn: {:system, "SENTRY_DSN"},
+  environment_name: :prod,
+  enable_source_code_context: true,
+  root_source_code_path: File.cwd!(),
+  client: Sentry.FinchClient,
+  included_environments: [:prod]
+#+end_src
+
+You can of course expand on this implementation if you need to pass more options to the ~Finch~ child specification - I found that for my use case, defaults are fine, so for now I don't need to add any configuration hooks.
+
+To see the change in context, [[https://github.com/fully-forged/tune/pull/122][this is the original PR]].
