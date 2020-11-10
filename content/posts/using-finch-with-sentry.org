@@ -14,6 +14,10 @@ The [[https://hex.pm/packages/sentry][official Sentry package]] works as adverti
 
 The advantage in swapping the http client library (on top of uniforming the building blocks of the application) is that Finch has support for [[https://hex.pm/packages/telemetry][Telemetry]] metrics.
 
+#+begin_quote
+Update #1: Thanks to Wojtek Mach for [[https://github.com/fully-forged/tune/pull/131][a more streamlined implementation.]]
+#+end_quote
+
 The module I wrote is quite short:
 
 #+begin_src elixir
@@ -24,19 +28,12 @@ defmodule Sentry.FinchClient do
 
   @behaviour Sentry.HTTPClient
 
+  @impl true
   def child_spec do
-    opts = [name: Sentry.Finch]
-
-    Supervisor.child_spec(
-      %{
-        id: __MODULE__,
-        start: {Finch, :start_link, [opts]},
-        type: :supervisor
-      },
-      []
-    )
+    Finch.child_spec(name: Sentry.Finch)
   end
 
+  @impl true
   def post(url, headers, body) do
     request = Finch.build(:post, url, headers, body)
 
@@ -51,7 +48,24 @@ defmodule Sentry.FinchClient do
 end
 #+end_src
 
-The trickiest bit was to get the ~child_spec/0~ callback right while keeping [[https://erlang.org/doc/man/dialyzer.html][dialyzer]] happy. The first implementation I wrote was simply ~{Finch, name: Sentry.Finch}~, but that would fail to satisfy [[https://hexdocs.pm/sentry/Sentry.HTTPClient.html#c:child_spec/0][the typespec defined for ~child_spec/0~]]. This version, albeit more verbose, returns the correct type.
+The trickiest bit was to get the ~child_spec/0~ callback right while keeping [[https://erlang.org/doc/man/dialyzer.html][dialyzer]] happy. The first implementation I wrote was simply ~{Finch, name: Sentry.Finch}~, but that would fail to satisfy [[https://hexdocs.pm/sentry/Sentry.HTTPClient.html#c:child_spec/0][the typespec defined for ~child_spec/0~]]. I then switched to a more verbose version:
+
+#+begin_src elixir
+  def child_spec do
+    opts = [name: Sentry.Finch]
+
+    Supervisor.child_spec(
+      %{
+        id: __MODULE__,
+        start: {Finch, :start_link, [opts]},
+        type: :supervisor
+      },
+      []
+    )
+  end
+#+end_src
+
+This version satisfied dialyzer, but turns out there's a simpler way. After publishing this blog post, Wojtek Mach reached out and submitted a PR to streamline the specification to the version shown in the full example above.
 
 I also updated my production configuration:
 
@@ -67,4 +81,4 @@ config :sentry,
 
 You can of course expand on this implementation if you need to pass more options to the ~Finch~ child specification - I found that for my use case, defaults are fine, so for now I don't need to add any configuration hooks.
 
-To see the change in context, [[https://github.com/fully-forged/tune/pull/122][this is the original PR]].
+To see the change in context, [[https://github.com/fully-forged/tune/pull/122][this is the original PR]], with the [[https://github.com/fully-forged/tune/pull/131][follow-up by Wojtek Mach]].
