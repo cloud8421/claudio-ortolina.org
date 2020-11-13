@@ -3,6 +3,9 @@ title: "Fish"
 date: 2020-11-06T12:28:16Z
 draft: false
 description: An introduction to one of my favourite artists of all time
+cover: "/img/fish/cover.jpg"
+coverAlt: "Detail of Fish's portrait from the cover art from the album Fellini Days"
+coverCaption: "Cover art from the album Fellini Days, credit to Mark Wilkinson"
 tags:
   - music
 ---
