@@ -1,0 +1,290 @@
+---
+title: "Building a Custom Page for Phoenix Live Dashboard"
+date: 2020-11-21T09:29:01Z
+draft: true
+description: "Gradually building a full-featured page to explore Tune sessions"
+tags:
+  - elixir
+  - software development
+---
+
+#+PROPERTY: header-args:elixir :session *Tune* :remsh tune@mini.local :name post :wrap "src elixir"
+
+One of the most interesting features provided by Phoenix Live Dashboard is the ability to [[https://hexdocs.pm/phoenix_live_dashboard/Phoenix.LiveDashboard.PageBuilder.html#content][define your own pages]], so that you can quickly and reliably extend a Live Dashboard instance with sections that are tailored to your application domain.
+
+While working on [[https://github.com/fully-forged/tune][Tune]], I found a use case suitable for a custom live dashboard page: a debugging view where I can check open sessions and inspect the underlying processes.
+
+* On the use case
+
+I would encourage you to read [[https://github.com/fully-forged/tune][Tune's README]] to understand the use case in more detail, but I'll quote the relevant architectural section:
+
+#+begin_quote
+Tune assumes multiple browser sessions for the same user, which is why it defines a [[https://tune-docs.fullyforged.com/Tune.Spotify.Session.html#content][~Tune.Spotify.Session~]] behaviour with [[https://tune-docs.fullyforged.com/Tune.Spotify.Session.HTTP.html#content][~Tune.Spotify.Session.HTTP~]] as its main runtime implementation.
+
+Each worker is responsible to proxy interaction with the Spotify API, periodically poll for data changes, and broadcast corresponding events.
+
+When a user opens a browser session, [[https://tune-docs.fullyforged.com/TuneWeb.ExplorerLive.html#content][~TuneWeb.ExplorerLive~]] either starts or simply reuses a worker named with the same session ID.
+
+Each worker monitors its subscribers, so that it can shutdown when a user closes their last browser window.
+
+This architecture ensures that:
+
+- The amount of automatic API calls against the Spotify API for a given user is constant and independent from the number of user sessions for the same user.
+- Credential renewal happens in the background
+- The explorer implementation remains entirely focused on UI interaction
+#+end_quote
+
+In other words:
+
+- For each Spotify account connected, there can only be one session (a ~Tune.Spotify.Session.HTTP~ process named with the session ID).
+- For each session, there can be many open clients (i.e. browser windows or ~TuneWeb.ExplorerLive~ process).
+
+* Requirements
+
+Our dashboard page will include:
+
+- A table with session IDs, PIDs and count of open clients
+- Ability to sort by session ID or clients count
+- Search by session ID
+- Support multiple nodes
+
+* Gathering the necessary data
+
+To populate the dashboard table, we first need to find a way to get a list of all active sessions, along with their clients count.
+
+The simplest way is to leverage the fact that each ~Tune.Spotify.Session.HTTP~ process is started with a name managed via a [[https://hexdocs.pm/elixir/Registry.html][Registry]], with the session ID as a key. Registration is in place to guarantee that there can only be one session process with the same ID on each node.
+
+We can use [[https://hexdocs.pm/elixir/Registry.html#select/2][~Registry.select/2~]] to query the registry and receive back all session IDs and PIDs:
+
+#+NAME: registry-lookup
+#+begin_src elixir
+Registry.select(
+  Tune.Spotify.SessionRegistry,
+  [{{:"$1", :"$2", :_}, [], [{{:"$1", :"$2"}}]}]
+)
+#+end_src
+
+Which returns:
+
+#+RESULTS: registry-lookup
+#+begin_src elixir
+[{"claudio.ortolina", #PID<0.565.0>}]
+#+end_src
+
+In the example above, we use a match specification to capture the registry key (the session ID) and the registered PID.
+
+It's important to understand straight away the constraints associated with this approach:
+
+- A ~Registry~ is normally split into a variable number of partitions, so this query has to visit all partitions to return its results. While this is not a problem at this stage (the application has very little load), it can become a bottleneck once the number of registered processes grows.
+- As data is partitioned, it's not possible to apply sort order or limit the results without concatenating them all first, which means that both operations will need to be done by the caller.
+- Results only apply to the current node, which works well with Phoenix Live Dashboard's general structure, which always operates on one node at a time.
+
+Given the registry query above, we can implement a function that provides the data necessary to populate an unfiltered, unsorted version of the table:
+
+#+NAME: unfiltered-data-source
+#+begin_src elixir
+defmodule Tune.Spotify.Supervisor do
+  # omitted
+  def sessions do
+    Tune.Spotify.SessionRegistry
+    |> Registry.select([{{:"$1", :"$2", :_}, [], [{{:"$1", :"$2"}}]}])
+    |> Enum.map(fn {id, pid} ->
+      subscribers_count = Tune.Spotify.Session.HTTP.subscribers_count(id)
+      %{id: id, pid: pid, clients_count: subscribers_count}
+    end)
+  end
+end
+#+end_src
+
+The resulting data structure is a map with the necessary data:
+
+#+RESULTS: unfiltered-data-source
+#+begin_src elixir
+[%{clients_count: 1, id: "claudio.ortolina", pid: #PID<0.565.0>}]
+#+end_src
+
+* Dashboard page structure
+
+To build a dashboard page, we need to:
+
+1. Create a module that implements the ~use Phoenix.LiveDashboard.PageBuilder~ behaviour.
+2. Mount that module into the Live Dashboard configuration defined into our application router.
+
+What follows is a minimal implementation that shows the data we need, with the following limitations:
+
+- no searching, sorting or limiting capabilities
+- works only on a single node
+
+#+begin_src elixir
+defmodule TuneWeb.LiveDashboard.SpotifySessionsPage do
+  @moduledoc false
+  use Phoenix.LiveDashboard.PageBuilder
+
+  @impl true
+  def menu_link(_, _) do
+    {:ok, "Spotify Sessions"}
+  end
+
+  @impl true
+  def render_page(_assigns) do
+    table(
+      columns: columns(),
+      id: :spotify_sessions,
+      row_attrs: &row_attrs/1,
+      row_fetcher: &fetch_sessions/2,
+      rows_name: "sessions",
+      title: "Spotify Sessions"
+    )
+  end
+
+  defp fetch_sessions(_params, _node) do
+    # returns [%{clients_count: 1, id: "claudio.ortolina", pid: #PID<0.565.0>}]
+    sessions = Tune.Spotify.Supervisor.sessions()
+
+    {sessions, length(sessions)}
+  end
+
+  defp columns do
+    [
+      %{field: :id, header: "Session ID", sortable: :asc},
+      %{
+        field: :pid,
+        header: "Worker PID",
+        format: &(&1 |> encode_pid() |> String.replace_prefix("PID", ""))
+      },
+      %{field: :clients_count, header: "Clients count", sortable: :asc}
+    ]
+  end
+
+  defp row_attrs(session) do
+    [
+      {"phx-click", "show_info"},
+      {"phx-value-info", encode_pid(session[:pid])},
+      {"phx-page-loading", true}
+    ]
+  end
+end
+#+end_src
+
+The main ingredients of this implementation are:
+
+- The ~use Phoenix.LiveDashboard.PageBuilder~ directive, which adopts the behaviour with the same name and imports some convenience functions useful for building pages (e.g. ~encode_pid/1~).
+- The ~menu_link/2~ callback, which is used to define the name of the page and its label in the top navigation bar.
+- The ~render_page/2~ callback, which has to return a valid [[https://hexdocs.pm/phoenix_live_dashboard/Phoenix.LiveDashboard.PageBuilder.html#t:component/0][~component~]] - in this case via the [[https://hexdocs.pm/phoenix_live_dashboard/Phoenix.LiveDashboard.PageBuilder.html#table/1][~table/1~]] function.
+
+The table definition has a few moving parts:
+
+- An ~id~ (unique among other Live Dashboard pages).
+
+- A ~title~, shown in the page.
+
+- A ~rows_name~, interpolated in the short text blurb that details the total amount of results.
+
+- A ~columns~ attribute, which is a list of maps detailing the properties of each column.
+  
+  For each column, the ~id~ property has to map to a key in the data we will use to populate the table.
+
+  The ~sortable~ property defines which column can be used for sorting (by clicking on the header chevron). Note that unless you specify a ~default_sort_by~ attribute for the entire table, you have to have at least one column with the ~sortable~ property defined, otherwise you will get a compile error.
+
+  The ~format~ function takes the raw value for a cell in the column and transforms it to a string. It's useful to provide a string representation of the value that is suitable for an HTML table. In the code above, we copy the format function defined in [[https://github.com/phoenixframework/phoenix_live_dashboard/blob/8d7148d9c333a27766ee8bc971d4dba93c0f9695/lib/phoenix/live_dashboard/pages/processes_page.ex#L34][the Processes Live Dashboard page]].
+
+- A ~row_attrs~ function, which takes the data for each row and has to return a list of tuples representing the Phoenix LiveView attributes to apply to the table row itself. Defining attribute is necessary to enable functionality activated by clicking on the row itself. The implementation in this example lets you inspect the session PID in a modal overlay.
+
+  Similar to the ~format~ function, we leverage ~encode_pid/1~ to format the PID as string compatible with the ~show_info~ LiveView event.
+
+- A ~row_fetcher~ function, which takes the current ~params~ (search query, limit, sort key, sort direction) and the current node, and returns the data used to populate the table.
+
+  The return value has to conform to a tuple shape where the first value is a list of sessions (in the shape of maps with the same keys used for column ids) and the second value is the total number of results (irrespectively of the limit).
+
+  As we implemented ~Tune.Spotify.Supervisor.sessions/0~ taking care of using the same key names, its return value perfectly fits the expectations of the ~row_fetcher~ function.
+
+* Mounting the dashboard page
+
+To have the page up and running, we need to modify the ~live_dashboard/2~ function inside the application router:
+
+#+begin_src elixir
+live_dashboard "/dashboard",
+  metrics: TuneWeb.Telemetry,
+  metrics_history: {TuneWeb.Telemetry.Storage, :metrics_history, []},
+  additional_pages: [
+    spotify_sessions: TuneWeb.LiveDashboard.SpotifySessionsPage
+  ]
+#+end_src
+
+* Filters and limits
+
+We can now focus on implementing search, sorting and limits. Conceptually, we need to:
+
+- If specified, apply the search filter.
+- Always apply sort order.
+- Count the sorted elements, to return the correct total.
+- Always apply the limit clause to the sorted elements.
+
+All of these operations have to be handled by the implementation of the ~row_fetcher~ function.
+
+The params map has the following keys:
+
+- ~:search~: the string representing the contents of the search input (or ~nil~ when empty).
+- ~:sort_by~: the id of the column to sort by.
+- ~:sort_dir~: the sort direction, expressed with the atoms ~:asc~ and ~:desc~.
+- ~:limit~: the integer value representing the amount of max items requested by the user.
+
+The params map is very well thought out, as it has a fixed structure, applied defaults where available and values that play well with functions from the ~Enum~ module.
+
+We can extend the ~fetch_sessions/2~ function as follows:
+
+#+begin_src elixir
+defmodule TuneWeb.LiveDashboard.SpotifySessionsPage do
+  # omitted
+
+  defp fetch_sessions(params, _node) do
+    sessions =
+      Tune.Spotify.Supervisor.sessions()
+      |> filter(params)
+
+    {Enum.take(sessions, params[:limit]), length(sessions)}
+  end
+
+  defp filter(sessions, params) do
+    sessions
+    |> Enum.filter(fn session -> session_match?(session, params[:search]) end)
+    |> Enum.sort_by(fn session -> session[params[:sort_by]] end, params[:sort_dir])
+  end
+
+  defp session_match?(_session, nil), do: true
+  defp session_match?(session, search_string), do: String.contains?(session[:id], search_string)
+end
+#+end_src
+
+As outlined above, we start by filtering by search, using a very simple logic that just checks if the session ID contains the searched string.
+
+After search, we apply the sorting logic: the values of the ~:sort_by~ and ~:sort_dir~ perfectly fit using ~Enum.sort_by/3~ (a really appreciated API design choice), making the implementation short and sweet.
+
+When defining the returning tuple, we take care of applying the limit and returning the correct total count.
+
+With these changes in place, the generated table behaves as expected:
+
+{{< image src="/img/building-a-custom-page-for-phoenix-live-dashboard/sessions-table.png" alt="A screenshot of the Spotify sessions table built in this blog post" >}}
+
+* Supporting multiple nodes
+
+The last piece of the puzzle is making sure that we take into account the currently selected node.
+
+Fortunately, we just need to make a very small change to ~fetch_sessions/2~:
+
+#+begin_src elixir
+defp fetch_sessions(params, node) do
+  sessions =
+    node
+    |> :rpc.call(Tune.Spotify.Supervisor, :sessions, [])
+    |> filter(params)
+
+  {Enum.take(sessions, params[:limit]), length(sessions)}
+end
+#+end_src
+
+The OTP [[https://erlang.org/doc/man/rpc.html][rpc]] module conveniently provides a [[https://erlang.org/doc/man/rpc.html#call-4][~call/4~]] function that takes a node name, module, function, and arguments, returning the exact same value of the remotely executed function.
+
+* Conclusions
+
+To see the final version of ~TuneWeb.LiveDashboard.SpotifySessionsPage~, you can open [[https://github.com/fully-forged/tune/blob/32038997bc89f94ca8ee18f80d2f1cae946f7acb/lib/tune_web/live_dashboard/spotify_sessions_page.ex][the file in the repo]].
