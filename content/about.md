@@ -11,4 +11,4 @@ I currently work as a software engineer at PSPDFKit GmbH.
 
 If you run out of TV series to binge, you can watch any of my [talks]({{< ref "/talks" >}} "Talks").
 
-You can contact me at <cloud8421@gmail.com>.
+You can contact me by email at <cloud8421@gmail.com> or on [Twitter - cloud8421](https://twitter.com/cloud8421).
