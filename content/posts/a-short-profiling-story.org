@@ -89,14 +89,14 @@ The result (with some lines omitted) shows that most of the time
 (51.74%) is spent converting the binary response body to a list inside
 the =maybe_format_body/2= function:
 
-#+BEGIN_EXAMPLE
-  FUNCTION                                             CALLS        %    TIME  [uS / CALLS]
-  --------                                             -----  -------    ----  [----------]
+#+BEGIN_SRC
+  FUNCTION                                       CALLS        %    TIME  [uS / CALLS]
+  --------                                       -----  -------    ----  [----------]
   <omitted>
-  erlang:iolist_to_binary/1                                1    20.46   49705  [  49705.00]
-  erlang:binary_to_list/1                                  1    27.54   66887  [  66887.00]
-  httpc:maybe_format_body/2                                1    51.74  125664  [ 125664.00]
-#+END_EXAMPLE
+  erlang:iolist_to_binary/1                          1    20.46   49705  [  49705.00]
+  erlang:binary_to_list/1                            1    27.54   66887  [  66887.00]
+  httpc:maybe_format_body/2                          1    51.74  125664  [ 125664.00]
+#+END_SRC
 
 While this is not an indication of higher memory usage per se, it's a
 good lead: binary to list conversion can be memory intensive.
