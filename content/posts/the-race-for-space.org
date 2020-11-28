@@ -1,0 +1,174 @@
+---
+title: "The Race for Space"
+description: "Public Service Broadcasting's concept about the Space Race"
+date: 2020-11-28T17:55:37Z
+draft: false
+cover: "/img/the-race-for-space/cover.jpg"
+coverAlt: "Detail of the cover art of The Race for Space album cover, showing an illustration the earth in space"
+coverCaption: "Detail of the cover art of The Race for Space album cover"
+tags:
+  - music
+---
+
+[[http://publicservicebroadcasting.net/][Public Service Broadcasting]] (PBS for short) are a trio based in London, whose music usually involves historical audio documents with a mix of jazz, rock and electronic.
+
+Each one of their album revolves around a specific theme, usually inspired by modern/contemporary history, and includes a vast amount of archival audio footage, recording, and samples, with very little vocals on top.
+
+In 2015 they released [[https://en.wikipedia.org/wiki/The_Race_for_Space_(album)][The Race for Space]], a concept album that explores the first 15 years of the [[https://en.wikipedia.org/wiki/Space_Race][Space Race]] missions, from [[https://en.wikipedia.org/wiki/Sputnik_1][Sputnik 1]]'s flight in 1957 to the [[https://en.wikipedia.org/wiki/Apollo_17][last Apollo mission]] in 1972.
+
+The general tone celebrates achievements of both US and Soviet Union, emphasising each step as a human endeavour that transcends borders and politics.
+
+Between music, vocals and engineering, the album involved another 35 people, which is something you can only perceive after listening to it a few times: some of the instruments are particularly subtle and deserve special attention.
+
+Each song has a different personality and it's difficult to attribute a general genre to the entire album, but I can feel a general underlying cohesion which makes it that I rarely listen to one song and prefer to just play the entire record.
+
+* 1. The Race for Space
+
+{{< youtube VlnwuV6RuMo >}}
+
+The album opens with rearranged fragments of [[https://en.wikipedia.org/wiki/We_choose_to_go_to_the_Moon][US President John F. Kennedy's speech]] given at Rice University, Houston, Texas, on September 12, 1962. The speech sets the tone of the entire album, celebrating mankind's efforts to reach beyond the stars:
+
+#+begin_quote
+Many years ago, Great British explorer George Mallory \\
+Who was to die on Mount Everest \\
+Was asked 'why did he want to climb it?' \\
+He said 'because it is there' \\
+Well space is there and we're going to climb it \\
+And the moon and the planets are there \\
+And new hopes for knowledge and peace are there \\
+And therefore as we set sail we ask God's blessing \\
+On the most hazardous, and dangerous, and greatest adventure \\
+On which man has ever embarked -- John F. Kennedy
+#+end_quote
+
+It's difficult to listen to this speech without anticipation, especially knowing [[https://en.wikipedia.org/wiki/Apollo_11][what would happen 7 years later]].
+
+* 2. Sputnik
+
+The second track, /Sputnik/, takes us to the Soviet Union in 1957, to tell the story of the first object ever sent into space, the low Earth orbit satellite [[https://en.wikipedia.org/wiki/Sputnik_1][Sputnik 1]].
+
+{{< youtube It42TsD7_sI >}}
+
+In /Sputnik/, the original sounds of the unmanned spacecraft gradually become part of the main beat and gradually build excitement for the beginning of "man's cosmic existence".
+
+#+begin_quote
+The man made celestial body, for the first time in history \\
+Overcame terrestrial gravity and flew into space \\
+All men of all nations recognise this as a great achievement \\
+In an age where the race to conquer space has become an all-absorbing factor
+
+The era of man's cosmic existence
+#+end_quote
+
+Once again, the accent is on how people can be united by such an important event:
+
+#+begin_quote
+All over the world, people are tuning in to the 'bleep bleep bleep' of the satellite
+
+A dream cherished by men for many centuries comes true on October the 4th, 1957
+#+end_quote
+
+* 3. Gagarin
+
+If /Sputnik/ makes you tap your feet, then /Gagarin/ will make you dance: to tell the story of the first ever cosmonaut, [[https://en.wikipedia.org/wiki/Yuri_Gagarin][Yuri Gagarin]], PBS wrote an explosive song, a mix of funk, brass, marching band, you-name-it tune that captures the euphoria of such an important moment.
+
+{{< youtube wY-kAnvOY80 >}}
+
+The jump into the unknown is not something to be scared of:
+
+#+begin_quote
+The World's first cosmonaut \\
+The first to open the door into the unknown \\
+The first to step over the threshold of our homeland
+#+end_quote
+
+Gagarin himself appreciated his new vantage point:
+
+#+begin_quote
+Astronaut to Earth: I can see forests, rivers, [?] all around \\
+Everything's so beautiful, it's wonderful, it wonderful...
+#+end_quote
+
+* 4. Fire in the Cockpit
+
+After /Gagarin/, /Fire in the Cockpit/ is a cold shower and a stark reminder of the risks and cost of exploration, telling the tragedy of [[https://en.wikipedia.org/wiki/Apollo_1][Apollo 1]], where three astronauts lost their lives due to a cabin fire during a test.
+
+{{< youtube QLA9-1U7Vrw >}}
+
+The entire song revolves around the sound of static and deep keyboard tones, with a cello entering midway as we listen to the words of NASA's description of the events. It's a sad song, but exhibits the composure and respect owed to people who lost their lives while trying to advance the frontiers of human knowledge.
+
+* 5. E.V.A.
+
+{{< youtube PFSq4Q8WDs0 >}}
+
+In /E.V.A./[fn:eva] we hear the story of Alexei Leonov, Alexei Leonov completed the first spacewalk in 1965, spending 10 minutes outside in open space.
+
+It's interesting how the music almost stops when the astronaut leaves the spacecraft, mimicking the silence of the vacuum of space. The few piano notes we can hear really complement the marvel of Leonov's words:
+
+#+begin_quote
+I'm on the edge of the opening \\
+Of the airlock chamber \\
+I feel excellent \\
+I see clouds and the sea \\
+I am beginning to move away
+#+end_quote
+
+* 6. The Other Side
+
+/The Other Side/ takes us one step closer to the moon landing, focusing on the [[https://en.wikipedia.org/wiki/Apollo_8][Apollo 8]] mission, where for the first time a manned spacecraft completed an orbit of the moon, but from the unusual point of view of ground control.
+
+We hear voices and recordings from the control room, where ground control monitors the spacecraft as it's about to reach the blind side of the moon. The excitement and anxiety are palpable: to complete a lunar orbit, Apollo will temporarily lose signal with earth.
+
+{{< youtube P8LlUrT7MFo >}}
+
+Once again, the music tells the story without words, getting quiet during loss of signal and exploding into a liberating instrumental when Apollo finally replies back to Houston. The event is incredibly significant:
+
+#+begin_quote
+The unmanned lunar spacecraft traversed the moon perhaps over 10, 000 times \\
+But this is the first that a man aboard reported to his compatriots here on Earth
+#+end_quote
+
+* 7. Valentina
+
+/Valentina/ is a celebration of [[https://en.wikipedia.org/wiki/Valentina_Tereshkova][Valentina Tereshkova]], the first woman to ever go to space n 1963 (and to this date, the only one having ever been in a solo mission).
+
+{{< youtube Bnmq4WR83Mw >}}
+
+The song, which features choruses from [[http://www.smokefairies.com/][The Smoke Fairies]], is a graceful instrumental without any other vocals. J. Willgoose, Esq. writes on the matter:
+
+#+begin_quote
+One of the biggest problems with the material we use, from the period we address, is that it almost totally devoid of any female voice. \\
+It is often said that history is written by the winners, but it would be equally if not more apt to say that it has overwhelmingly been written by men. Of the footage I obtained of the first woman in space, all of it featured her voice being translated by male voices. \\
+Rather than yet more men - us, in this case - attempting to speak on her behalf, it seemed more appropriate to ask a guest singer to provide a female voice, so we tried a different approach with 'Valentina' and I'm very glad we did.
+#+end_quote
+
+[fn:eva] the name is a shorthand for /extravehicular activity/, which indicates a spacesuit designed for usage outside of a vehicle.
+
+* 8. Go!
+
+The story of the [[https://en.wikipedia.org/wiki/Apollo_11][Apollo 11]] and the first crew to land on the moon in 1969 represents one of the most important moments of human history. Once again, PBS decides to focus on the point of view of the people on the ground, to celebrate the often unseen work of preparation, monitoring, incredible engineering that made the whole thing possible.
+
+{{< youtube BHIo6qwJarI >}}
+
+/Go!/ is giant checklist, where we hear the flight director Gene Kranz go through all the checks needed to make sure that the descent on the moon will be successful. It's so interesting that the landing itself is just a couple of verses in the middle:
+
+#+begin_quote
+Houston, uh \\
+Tranquility base here, The Eagle has landed
+#+end_quote
+
+The repetition in the dialogues provides the rhythm of the song, which matches the excitement of the mission with upbeat percussions, synth and keyboard.
+
+/Go!/ is a reminder that we can achieve the impossible if we work together.
+
+* 9. Tomorrow
+
+The [[https://en.wikipedia.org/wiki/Apollo_17][Apollo 17]] mission, the last in the Apollo program, represents the end of an era and the last time we landed on the moon.
+
+{{< youtube 5Id8P6yvcWs >}}
+
+/Tomorrow/ reflects on its significance: as a species, we managed to leave our own planet, albeit temporarily, and look beyond to a completely unexplored universe.
+
+While it's not possible to separate the space race from the politics that fueled it in the first place, it's also a testament to the effort of thousands of people over decades, to literally take us where no one has ever been before.
+
+As an outro, /Tomorrow/ tempers the excitement of the previous songs and focuses more on choruses and keyboard, painting a picture of anticipation of what's gonna come next.
