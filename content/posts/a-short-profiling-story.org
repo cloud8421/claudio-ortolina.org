@@ -13,6 +13,8 @@ keywords:
   - profiling
   - memory
   - debug
+images:
+  - img/a-short-profiling-story/before.png
 summary: |
   Using ExProf and other diagnostic tools to debug memory usage in Elixir.
 ---
