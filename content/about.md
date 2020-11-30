@@ -1,7 +1,14 @@
-+++
-title = "About"
-date = "2020-11-03"
-+++
+---
+title: "About"
+date: "2020-11-03"
+summary: |
+  I'm Claudio Ortolina and this is my website, an old-fashioned blog where I post about all sorts of topics.
+keywords:
+  - claudio ortolina
+  - software engineer
+  - blog
+  - personal website
+---
 
 # Hello!
 
