@@ -15,6 +15,8 @@ keywords:
   - space race
 summary: |
   Public Service Broadcasting's concept about the Space Race
+images:
+  - /img/the-race-for-space/cover.jpg
 ---
 
 [[http://publicservicebroadcasting.net/][Public Service Broadcasting]] (PBS for short) are a trio based in London, whose music usually involves historical audio documents with a mix of jazz, rock and electronic.
