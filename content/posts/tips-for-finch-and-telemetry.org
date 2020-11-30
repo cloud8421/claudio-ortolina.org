@@ -13,6 +13,8 @@ keywords:
   - phoenix live dashboard
 summary: |
   A collection of tips to customize the interaction between Finch, Telemetry, and Phoenix Live Dashboard
+images:
+  - /img/tips-for-finch-and-telemetry/charts.png
 ---
 
 While working on [[https://github.com/fully-forged/tune][Tune]], I needed to collect performance metrics related to the interaction with the Spotify API.
@@ -90,7 +92,7 @@ For some additional clarity, we can also use the ~nav~ reporter option (see [[ht
 * Conclusion
 
 Both improvements required very small updates. Here's the final result, showing the custom Nav title ("HTTP - Spotify") to hint at the filter used to only show Spotify calls, and aggregation by normalized path (without query string).
-  
+
 {{< image src="/img/tips-for-finch-and-telemetry/charts.png" alt="A screenshot of the configured Finch Metrics inside Live Dashboard" >}}
 
 All in all, I was pleased to see that it was straightforward to customise the charts I needed. One thing I haven't worked on yet is aggregating metrics by logical path, i.e. by route (~GET /artist/:id~) instead of individual paths (~GET /artist/123~), but I have some ideas and will come back on it in a future post.
