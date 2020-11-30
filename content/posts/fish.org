@@ -8,6 +8,13 @@ coverAlt: "Detail of Fish's portrait from the cover art from the album Fellini D
 coverCaption: "Cover art from the album Fellini Days, credit to Mark Wilkinson"
 tags:
   - music
+keywords:
+  - music
+  - prog
+  - fish
+  - marillion
+summary: |
+  An introduction to Fish and his music.
 ---
 
 ** Prelude
