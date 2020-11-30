@@ -1,11 +1,18 @@
 ---
-title: "Tips for Finch and Telemetry"
+title: "Tips for Finch, Telemetry, and Phoenix Live Dashboard"
 date: 2020-11-17T17:27:05Z
 draft: false
-description: "A collection of tips to customize the interaction between Finch and Telemetry"
+description: "A collection of tips to customize the interaction between Finch, Telemetry, and Phoenix Live Dashboard"
 tags:
   - elixir
   - software development
+keywords:
+  - elixir
+  - telemetry
+  - finch
+  - phoenix live dashboard
+summary: |
+  A collection of tips to customize the interaction between Finch, Telemetry, and Phoenix Live Dashboard
 ---
 
 While working on [[https://github.com/fully-forged/tune][Tune]], I needed to collect performance metrics related to the interaction with the Spotify API.
