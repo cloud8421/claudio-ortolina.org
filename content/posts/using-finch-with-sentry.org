@@ -6,6 +6,12 @@ description: "How to setup Sentry to use the Finch HTTP Client"
 tags:
   - elixir
   - software development
+keywords:
+  - elixir
+  - finch
+  - sentry
+summary: |
+  How to setup Sentry to use the Finch HTTP Client
 ---
 
 A few weeks ago I added enabled support for [[https://sentry.io][Sentry]] inside [[https://github.com/fully-forged/tune][Tune]], my Spotify browser/client. Even if I'm pretty much the only user (I built it for myself after all), having exception tracking has already proved to be useful - band and song names can really create all sorts of issues.
