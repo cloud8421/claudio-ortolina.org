@@ -8,6 +8,13 @@ coverAlt: "Detail of the cover art of The Race for Space album cover, showing an
 coverCaption: "Detail of the cover art of The Race for Space album cover"
 tags:
   - music
+keywords:
+  - music
+  - public service broadcasting
+  - race for space
+  - space race
+summary: |
+  Public Service Broadcasting's concept about the Space Race
 ---
 
 [[http://publicservicebroadcasting.net/][Public Service Broadcasting]] (PBS for short) are a trio based in London, whose music usually involves historical audio documents with a mix of jazz, rock and electronic.
