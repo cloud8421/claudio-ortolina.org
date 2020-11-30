@@ -6,6 +6,14 @@ description: "Gradually building a full-featured page to explore Tune sessions"
 tags:
   - elixir
   - software development
+keywords:
+  - elixir
+  - phoenix
+  - phoenix live dashboard
+  - debug
+  - monitoring
+summary: |
+  Step by step instructions on how to build a custom Phoenix Live Dashboard page
 ---
 
 #+PROPERTY: header-args:elixir :session *Tune* :remsh tune@mini.local :name post :wrap "src elixir"
