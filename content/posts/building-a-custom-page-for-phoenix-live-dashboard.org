@@ -14,6 +14,8 @@ keywords:
   - monitoring
 summary: |
   Step by step instructions on how to build a custom Phoenix Live Dashboard page
+images:
+  - /img/building-a-custom-page-for-phoenix-live-dashboard/sessions-table.png
 ---
 
 #+PROPERTY: header-args:elixir :session *Tune* :remsh tune@mini.local :name post :wrap "src elixir"
