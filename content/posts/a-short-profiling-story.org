@@ -2,10 +2,19 @@
 title: "A Short Profiling Story"
 date: 2020-11-03T11:42:42.000Z
 draft: false
-description: "Using profiling tools to understand and debug memory usage"
+description: |
+  Using profiling tools to understand and debug memory usage
 tags:
   - elixir
   - software development
+keywords:
+  - elixir
+  - exprof
+  - profiling
+  - memory
+  - debug
+summary: |
+  Using ExProf and other diagnostic tools to debug memory usage in Elixir.
 ---
 
 While transcribing
