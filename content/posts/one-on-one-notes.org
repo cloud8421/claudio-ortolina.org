@@ -6,6 +6,14 @@ description: "Some things I learned while doing remote 1-on-1 meetings"
 tags:
   - people
   - management
+keywords:
+  - remote
+  - meetings
+  - call
+  - 1-on-1
+  - management
+summary: |
+  A collection of notes for effective 1-on-1 meetings for remote teams.
 ---
 
 In the last two years I've done hundreds of remote 1-on-1 meetings, both
