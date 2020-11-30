@@ -1,7 +1,18 @@
-+++
-title = "Talks"
-date = "2020-11-03"
-+++
+---
+title: "Talks"
+date: "2020-11-03"
+summary: |
+  This is a collection of conference talks I've given over time in reverse chronological order, along with their original abstracts.
+keywords:
+  - talks
+  - videos
+  - elixir
+  - erlang
+  - genstage
+  - kitchen
+  - elixirconf
+  - codebeam
+---
 
 # Talks
 
