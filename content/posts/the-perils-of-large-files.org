@@ -1,0 +1,19 @@
+---
+title: "The Perils of Large Files"
+date: 2021-04-05T11:00:00Z
+draft: false
+description: "A deep dive on the pitfalls of working with large files in Elixir and OTP."
+tags:
+  - elixir
+  - software development
+keywords:
+  - elixir
+  - memory
+  - profiling
+summary: |
+  A deep dive on the pitfalls of working with large files in Elixir and OTP.
+---
+
+I recently wrote a blog post about working with large files in Elixir and OTP at [[https://pspdfkit.com/blog/2021/the-perils-of-large-files-in-elixir/][PSPDFKit's blog]].
+
+The post originated from a talk I gave last year for [[https://www.elixirconf.eu][ElixirConf.eu]], but it contains more precise analysis.
