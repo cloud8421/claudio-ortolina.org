@@ -1,16 +1,16 @@
 ---
 title: "Teaching Elixir"
 date: 2021-06-05T08:34:25+03:00
-description: "Onboarding and whatnot"
+description: "Lessons learnt while onboarding Elixir Developers at PSPDFKit."
 tags:
   - elixir
   - people
   - software development
 summary: |
-  More onboarding content
+  Lessons learnt while onboarding Elixir Developers at PSPDFKit.
 ---
 
-When I joined PSPDFKit in 2018, I inherited the development and maintenance of PSPDFKit Server, the server-side component of PSPDFKit for Web.
+When I joined [PSPDFKit](https://pspdfkit.com) in 2018, I inherited the development and maintenance of [PSPDFKit Server](https://pspdfkit.com/guides/server/pspdfkit-server/overview/), the server-side component of [PSPDFKit for Web](https://pspdfkit.com/pdf-sdk/web/).
 
 Initially, I was the only person working on the project full-time. With time, the team expanded to a total of 3 people and I moved on to manage the Web Team.
 
@@ -26,20 +26,20 @@ PSPDFKit is a distributed company where everyone works remotely. The PSPDFKit Se
 
 The core business for the company is the sale of SDKs used to manipulate documents (predominantly in PDF format).
 
-SDKs support a variety of platforms (iOS, Android, Windows and Web) and are embedded in client applications written and maintained by customers.
+SDKs support a variety of platforms (iOS, Android, Windows and Web) and are embedded in client applications written and maintained by our customers.
 
 ## The Project
 
 PSPDFKit Server’s codebase is more than 5 years old and has grown organically over time thanks to the work of people with different expertise and background.
 
-Domain-wise, the application manages the lifetime of a document, allowing our customers to build specific workflows on top of a set of primitives: documents, content layers, annotations of different types, and permission sets. At a very high level, a user can open a document, perform an arbitrary set of actions, get real time updates on what other users are doing on that document, and close it with changes automatically and efficiently stored.
+Domain-wise, the application manages the lifetime of a document, allowing our customers to build specific workflows on top of a small set of primitives: documents, content layers, annotations of different types, and permission sets. At a very high level, a user can open a document, perform an arbitrary set of actions (optionally leveraging real-time collaboration with other users), and finish their session with changes automatically and efficiently stored.
 
 Due to the way the product is sold and operated, it has a few key properties that make it different from most projects I’ve ever worked on:
 
 1. It’s both CPU and memory intensive due to the amount of operations performed on PDF files. The component that interacts with PDF files is run as binary daemon and maintained by a different team.
 2. The application has optional components that are activated depending on specific configuration options. For example, one can enable an entire caching layer based on Redis.
 3. Features can be turned on and off remotely via our licensing infrastructure.
-3. The release is shipped as a Docker image to be operated on premise by the customer. This means that there’s no immediate visibility over performance or direct monitoring and we strive to minimise the operational complexity of the end product.
+4. The release is shipped as a Docker image to be operated on premise by the customer. This property has two implications: first, it means that we don't have direct access to performance monitoring or visibility over runtime issues. Second, it drives us to minimise the operational complexity of the end product: for example, we don't leverage the native Erlang/Elixir distribution because that would complicate deployment for our customers.
 
 ## Onboarding results
 
@@ -55,13 +55,15 @@ It’s great that we can facilitate different degrees of contribution, with a ra
 
 The people involved have completely different backgrounds: heavy frontend development, systems programming, mobile development. And apart from 1 person, all other people had very little functional programming experience.
 
-## Learning styles
+## Training structure
 
-An important aspect to consider is each person’s learning style: some people prefer pair-programming, other ones would rather go through a book or tutorials in their own time and ask questions when needed.
+### Learning styles
 
-To cater for such differences, we combine learning materials with targeted pairing sessions, with follow-up calls to clarify where needed.
+An important aspect to consider is each person’s learning style: some people prefer pair-programming, other ones would rather go through a tutorials in their own time and ask questions when needed.
 
-## Tooling
+To cater for such differences, we combine learning materials with targeted pairing sessions, with follow-up calls to clarify where needed. The schedule is also kept pretty flexible, meaning that we don't have a fixed curriculum people go through in a set period of time.
+
+### Tooling
 
 The company uses a diverse set of languages and associated development tools, ranging from text editors to full-fledged IDEs, running on MacOS, Windows and Linux.
 
@@ -71,31 +73,30 @@ A quick informal survey of the Server Team reveals that people use Vim, Emacs, V
 
 We enforce code formatting at the CI level, but encourage people to setup their development environment to format on file save.
 
-For code intelligence, Elixir has a solid implementation of a LSP engine that provides intelligent autocompletion, inline docs, and jump to definition. Especially for people coming from a Java background, this type of tooling helps providing a consistent experience.
+For code intelligence, Elixir has a solid implementation of a [Language Server](https://github.com/elixir-lsp/elixir-ls) that provides intelligent autocompletion, inline docs, and jump to definition. Especially for people coming from a Java background, this type of tooling helps providing a consistent experience.
 
 In terms of domain-specific tooling, we glue everything together with shell scripts and Docker-based workflows.
 
-## Productivity ramp-up time
+### Productivity ramp-up time
 
-People are usually productive in 2-3 days, where productive means being able to setup the project, get a basic understanding of its structure and architecture, take on a small piece of work and producing a relevant pull request containing both implementation and tests.
+People are usually productive in 2-3 days, where "being productive" means being able to setup the project, get a basic understanding of its structure and architecture, take on a small piece of work and producing a relevant pull request containing implementation, tests and documentation.
 
 You may have heard of the mantra "Making a commit on your first day". While I agree on the sentiment behind it, I find it puts too much pressure on the contributor.
 
 As part of the initial onboarding, it's normal to find little issues with setup scripts (e.g. things that stop working between major OS versions) or unclear documentation. In most cases fixes are cheap to implement and offer an opportunity to digress on the application architecture.
 
-## Proficiency
+### Proficiency
 
-On average, it takes 2-3 months for an engineer to become a proficient contributor who worked on most areas of the codebase.
+On average, it takes 2-3 months for an engineer to become a proficient contributor who worked on most areas of the codebase, including some of the internal parts which are subject to very low churn over time.
 
-## How
 
 ### Learning materials
 
-We generally recommend going through the elixir-lang.org guides: they’re well written, accurate and split in easy to digest chunks.
+We generally recommend going through the [Elixir Lang guides](https://elixir-lang.org/getting-started/introduction.html): they’re well written, accurate and split in easy to digest chunks.
 
-For all libraries, the package documentation available on hexdocs.pm tends to be sufficient.
+For all libraries, package documentation available on hexdocs.pm tends to be sufficient.
 
-While we do have a few available books in the company digital library, they tend to be ignored.
+While we do have a few available books in the company digital library, they're raraly consulted.
 
 ### Scope
 
@@ -118,7 +119,7 @@ Learning is complemented by specific articles (e.g. an introduction to circuit b
 When a person starts to submit code for review, we try and provide different layers of feedback:
 
 - At first, we focus only on functionality, so that things work as expected. At this stage, the purpose is to build confidence and get the person comfortable.
-- We address code quality and language conventions in subsequent PRs, so that changes can be reviewed separately and it’s clearer why they’re necessary.
+- We address code quality and language conventions in follow-up PRs, so that changes can be reviewed separately and it’s clearer why they’re necessary.
 - Reviews include links for self-learning, so that the person can explore on their own.
 - If a PR review becomes too long, we suggest a pairing session to discuss things directly.
 - We try to use proper names for all concepts, but try and be conservative about introducing too many ideas in the same feedback session.
@@ -138,7 +139,7 @@ Understanding pattern matching comes in the first hour of reading existing code,
 
 For people who approach Elixir as their first functional language coming from object-oriented languages, the first adaptation step is to start reasoning in terms of data threaded through functions.
 
-People quickly embraced immutability due perceived benefits in clarity and predictability of the program: one of our engineers commented that at the beginning of his learning journey, he could sprinkle print statements all over the codebase to see values changing and visualize the application flow.
+People quickly embraced immutability due perceived benefits in clarity and predictability of the program: one of our engineers commented that at the beginning of his learning journey, they could sprinkle print statements all over the codebase to see values changing and visualize the application flow.
 
 In this phase, developers tended to write very explicit code, with plenty of intermediate bindings and little use of more advanced language features like the `|>` operator or the `with` macro.
 
@@ -158,7 +159,7 @@ Common issues include hitting some light race conditions in the form of tests ha
 
 The application has a few concurrent components, but their structure is rarely modified and developers can use public APIs without much concern for the internals.
 
-This is a big advantage and it lets us decide when it's time to look at the concurrency model. We normally suggest looking at the examples in the Elixir Lang guides, then schedule a couple of pairing sessions to look at the most significant components included in our codebase.
+This is a big advantage and it lets us plan when it's time to look at the concurrency model. We normally suggest looking at the examples in the Elixir Lang guides, then schedule a couple of pairing sessions to look at the most significant components included in our codebase.
 
 Once we're done with the fundamentals, we approach concurrency patterns: pools, worker queues, tasks, etc. For such cases, we train only on our application codebase.
 
@@ -180,7 +181,7 @@ What follows is a list of road bumps we encountered over time. Some of them are 
 
 Especially for people with knowledge of programming languages with static types, having Dialyzer as a separate step from the compiler can be frustrating.
 
-Fortunately, the introduction of the LSP and related projects make it that it's possible to setup the editing environment to provide almost real-time type information with a reasonable level of accuracy.
+Fortunately, the aforementioned Language Server and related projects make it possible to setup the editing environment to provide almost real-time type information with a reasonable level of accuracy.
 
 #### Structuring large components
 
@@ -199,3 +200,9 @@ As we don't operate the software we write, we need to take extra care with error
 This need creates a very mild tension between our style of error handling compared to existing literature and community examples around applications that are run directly by the same developers who write them.
 
 For example, it's much better for us to produce a single line error log with a specific name we understand compared to a more verbose stack trace, because it facilitates communication with the customer.
+
+## Conclusion
+
+I often hear the argument that "it's difficult to hire Elixir developers". In my experience, once you have 2 reasonably knowledgeable engineers, you can stop searching for already trained developers and expand the search to developers willing to learn the language. With some care around the onboarding process, it's possible to successfully train a new developer every 2-3 months with a very reasonable impact on the rest of the team.
+
+
