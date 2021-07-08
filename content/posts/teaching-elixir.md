@@ -95,7 +95,7 @@ On average, it takes two to three months for an engineer to become a proficient 
 
 We generally recommend going through the [Elixir Lang guides](https://elixir-lang.org/getting-started/introduction.html): they’re well written, accurate, and split in easy-to-digest chunks.
 
-For all libraries, making package documentation available on [hexdocs](hexdocs.pm) tends to be sufficient.
+For all libraries, making package documentation available on [hexdocs](https://hexdocs.pm) tends to be sufficient.
 
 While we do have a few books available in the company digital library, they're rarely consulted.
 
