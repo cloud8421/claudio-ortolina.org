@@ -51,7 +51,7 @@
 &lt;p>On average, it takes two to three months for an engineer to become a proficient contributor who has worked on most areas of the codebase, including some of the internal parts which are subject to very low churn over time.&lt;/p>
 &lt;h3 id="learning-materials">Learning materials&lt;/h3>
 &lt;p>We generally recommend going through the &lt;a href="https://elixir-lang.org/getting-started/introduction.html">Elixir Lang guides&lt;/a>: they’re well written, accurate, and split in easy-to-digest chunks.&lt;/p>
-&lt;p>For all libraries, making package documentation available on &lt;a href="hexdocs.pm">hexdocs&lt;/a> tends to be sufficient.&lt;/p>
+&lt;p>For all libraries, making package documentation available on &lt;a href="https://hexdocs.pm">hexdocs&lt;/a> tends to be sufficient.&lt;/p>
 &lt;p>While we do have a few books available in the company digital library, they&amp;rsquo;re rarely consulted.&lt;/p>
 &lt;h3 id="scope">Scope&lt;/h3>
 &lt;p>We start with small, incremental features, as they have a very high completion success rate. For internal hires, we try to choose something connected to a use case the person is already familiar with from previous work.&lt;/p>
