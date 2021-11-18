@@ -6,6 +6,7 @@ summary: |
 keywords:
   - claudio ortolina
   - software engineer
+  - CTO
   - blog
   - personal website
 ---
@@ -14,7 +15,7 @@ keywords:
 
 I'm Claudio Ortolina and this is my website, an old-fashioned blog where I post about all sorts of topics.
 
-I currently work as a software engineer at PSPDFKit GmbH.
+I currently work as CTO at PSPDFKit GmbH.
 
 If you run out of TV series to binge, you can watch any of my [talks]({{< ref "/talks" >}} "Talks").
 
