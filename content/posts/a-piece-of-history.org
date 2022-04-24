@@ -21,7 +21,7 @@ Over the course of two years, [[https://en.wikipedia.org/wiki/Battles_of_the_Iso
 
 {{< figure src="/img/a-piece-of-history/battle-of-caporetto.jpg" position="center" alt="Map of Northern Italy, with military lines describing troop movements after the defeat of Caporetto" caption="Map of the Battle of Caporetto, with red lines indicating the progression of the Austro-Hungarian army" >}}
 
-After the defeat, Francesco was transferred and finally dismissed in 1919, wounded and affected by tubercolosis. He then managed to get back to Pioltello, where he resumed his political endeavours.
+After the defeat, Francesco was transferred and finally dismissed in 1919, wounded and affected by tuberculosis[fn:tuberculosis]. He then managed to get back to Pioltello, where he resumed his political endeavours.
 
 ** From Mayor to fugitive
 
@@ -63,7 +63,7 @@ In the meantime, Francesco had to move, spending 1923 in Milan. In 1924, two arr
 
 Francesco would spend the next twenty years away from Pioltello, with very limited contact with his family.
 
-In 1924, he had a brief stint with the police, who didn't recognise him. Despite escaping arrest, he lost his job, forcing him to seek fortune NW of Turin, in Varese, where he was also treated for his tubercolosis. In 1926, he was attacked by a squad of 50 people while he was treated in the /Cuasso al Monte/ hospital, trying to make a narrow escape to the mountains. Wounded, he was arrested and detained for a month in Varese's penitentiary. After his release, he was forbidden to step foot in the borders of the province and forced to make his way back to Turin, where he would remain until 1945.
+In 1924, he had a brief stint with the police, who didn't recognise him. Despite escaping arrest, he lost his job, forcing him to seek fortune NW of Turin, in Varese, where he was also treated for his tuberculosis. In 1926, he was attacked by a squad of 50 people while he was treated in the /Cuasso al Monte/ hospital, trying to make a narrow escape to the mountains. Wounded, he was arrested and detained for a month in Varese's penitentiary. After his release, he was forbidden to step foot in the borders of the province and forced to make his way back to Turin, where he would remain until 1945.
 
 I remember stories where he would meet with my relatives in a café in Milan.
 
@@ -77,6 +77,8 @@ A bright example for his comrades.
 #+end_quote
 
 [fn:nadila] As recalled in an interview included in the book: Guido Calcavecchia, Daniela Milanesi, Fiorenza Pistocchi, Mimma Spanu. /I sbarbàa e i tosànn che fecero la Repubblica. Fatti, storie, documenti dal primo dopoguerra alla liberazione a Pioltello/, 2006, ISBN 88-8391-187-3
+
+[fn:tuberculosis] At the beginning of the First World War Italy counted around 50 thousands cases of tuberculosis a year, which grew due to the impact of the war effort on the national healthcare system, the increased density of people both at the war front and at home in war factories (more information in at [[https://www.storiaememoriadibologna.it/files/vecchio_archivio/prima-guerra/t/Tubercolosi.pdf][Storia e Memoria di Bologna]] - link in Italian).
 
 [fn:fascist-movement] Note that at this point in time - the word "fascist" referred to the main symbol used by the movement, the so-called "Fascio littorio" (more information [[https://en.wikipedia.org/wiki/Fascist_symbolism#Italy][on Wikipedia]]). The current use of the word to indicate a far-right, oppressive regime has its origins in this very movement.
 
