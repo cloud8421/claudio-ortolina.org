@@ -52,7 +52,7 @@ The following months are a blur - I remember working from all sorts of places: t
 
 That’s how the iPad came back in full force: always on, always charged, with data always in sync. Pair it with the Apple Pencil, and a pair of earphones, and it gave me the ability to adapt work to a complicated personal life.
 
-I was happy to see that software had gotten better: Safari gained a desktop mode which supported all sorts of complex web apps, and all other apps improved to the point of being _at least_ usable (Google Docs, I’m looking at you). Notable mentions go to Agenda, Mindnode, and Fantastical, which set a very high bar for quality software in general.
+I was happy to see that software had gotten better: Safari gained a desktop mode which supported all sorts of complex web apps, and all other apps improved to the point of being _at least_ usable (Google Docs, I’m looking at you). Notable mentions go to [Agenda](https://www.agenda.com), [Mindnode](https://www.mindnode.com), and [Fantastical](https://flexibits.com/fantastical), which set a very high bar for quality software in general.
 
 Later in the year, things started to calm down and even if I could use the Mac Mini, I would prefer the iPad. I invested in a desk stand which would let me prop it to a decent height, connect it to a good keyboard and mouse, and happily went about my work day.
 
@@ -66,6 +66,6 @@ I don’t think I’m making a point - as in trying to be clever or different by
 
 The iPad fits my mental model of getting things done (tasks instead of files), and it doesn’t get in the way. It’s got great security defaults, it’s encrypted, and automatically backed up. If I buy a new one, I can easily transfer all my data and be up and running in a couple of hours.
 
-The iPAD lets me focus on what I want to achieve, as opposed to losing myself in endless maintenance.
+The iPad lets me focus on what I want to achieve, as opposed to losing myself in endless maintenance.
 
 I take notes of points of friction, and every once in a while, I review my workflows: if I wanna change anything, I’ll test a different application (after making sure my data is portable), and move on.
