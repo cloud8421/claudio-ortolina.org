@@ -1,14 +1,14 @@
-—
-title: “an iPad retrospective”
+---
+title: "An iPad retrospective"
 date: 2022-08-11T06:34:25+03:00
-description: “Thinking about my iPad usage”
+description: "Thinking about my iPad usage"
 tags:
   - productivity
   - software
   - hardware
 summary: |
   A collection of thoughts around my iPad usage.
-—
+---
 
 I’ve been working on iPad full-time for a while now, and it’s always a source of surprise when I talk about it with other people. This post aims at summarising the *why* behind this preference of mine.
 
