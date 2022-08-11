@@ -1,6 +1,6 @@
 —
 title: “an iPad retrospective”
-date: 2022-09-11T08:34:25+03:00
+date: 2022-08-11T08:34:25+03:00
 description: “Thinking about my iPad usage”
 tags:
   - productivity
