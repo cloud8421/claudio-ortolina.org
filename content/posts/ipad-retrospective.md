@@ -16,7 +16,7 @@ I’ve been working on iPad full-time for a while now, and it’s always a sourc
 
 I spent 2019 on the Turkish West Coast, in a small town near Izmir. It’s a lovely place where everyone knows each other, and where we now have friends and people we care about.
 
-I was working as a backend engineer on PSPDFKit Server, a product written in Elixir and packaged via Docker, on my trusty old 2014 11” Macbook Air. A wonderful machine - powerful for its size, and featherweight.
+I was working as a backend engineer on [PSPDFKit Server](https://pspdfkit.com/guides/server/pspdfkit-server/overview/), a product written in Elixir and packaged via Docker, on my trusty old 2014 11” Macbook Air. A wonderful machine - powerful for its size, and featherweight.
 
 Around April, a few things happened at the same time:
 
@@ -55,6 +55,8 @@ That’s how the iPad came back in full force: always on, always charged, with d
 I was happy to see that software had gotten better: Safari gained a desktop mode which supported all sorts of complex web apps, and all other apps improved to the point of being _at least_ usable (Google Docs, I’m looking at you). Notable mentions go to Agenda, Mindnode, and Fantastical, which set a very high bar for quality software in general.
 
 Later in the year, things started to calm down and even if I could use the Mac Mini, I would prefer the iPad. I invested in a desk stand which would let me prop it to a decent height, connect it to a good keyboard and mouse, and happily went about my work day.
+
+{{< image src="/img/an-ipad-retrospective/my-desk.jpg" alt="Photo of my desk showing the iPad with its stand, keyboard, and trackball" >}}
 
 ## Introspection
 
