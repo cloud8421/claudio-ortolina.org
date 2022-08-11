@@ -1,7 +1,7 @@
 ---
 title: "An iPad retrospective"
 date: 2022-08-11T06:34:25+03:00
-description: "Thinking about my iPad usage"
+description: "Thinking about my iPad usage."
 tags:
   - productivity
   - software
