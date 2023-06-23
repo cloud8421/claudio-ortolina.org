@@ -15,6 +15,8 @@ There's music that accompanied me for the last 20 years, pretty much since I bec
 
 Of all that music, thousands of songs, there's a handful that made a deep mark that I still carry with me. More than anything else, one song stands above any other: _Arriving Somewhere, But Not Here_ by Porcupine Tree.
 
+{{< youtube Kpeip2B8l2E >}}
+
 I turned 39 a few days ago and my wife got me as a gift a very nice edition of _Deadwing_, the album the song is included in. It's a 2018 remaster, which I'm listening to on a high-quality system.
 
 It's a 12 minute song, with long instrumental sections, and I know every single little twist - yet this new version has some little extra details, some of the ambient parts are crisper, some of the guitar sounds pop a little bit more. I love it.
