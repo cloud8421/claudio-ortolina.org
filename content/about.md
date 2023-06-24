@@ -19,4 +19,4 @@ I currently work as CTO at PSPDFKit GmbH.
 
 If you run out of TV series to binge, you can watch any of my [talks]({{< ref "/talks" >}} "Talks").
 
-You can contact me by email at <cloud8421@gmail.com> or on [Twitter - cloud8421](https://twitter.com/cloud8421).
+You can contact me by email at <cloud8421@gmail.com>.
