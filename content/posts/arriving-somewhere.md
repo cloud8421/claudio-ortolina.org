@@ -7,6 +7,11 @@ tags:
   - music
 summary: |
   Rambling about my favourite song
+cover: "/img/arriving-somewhere/cover.jpg"
+coverAlt: "Detail of the art for Deadwing's album cover, showing the silhouette of a woman looking at a lake."
+coverCaption: "Detail of the art for Deadwing's album cover"
+images:
+  - /img/arriving-somewhere/cover.jpg
 ---
 
 I'm almost 40 - and while my life has somehow the shape that I envisioned as I grew up, there are definitely big differences. Think about the same picture, but in different colors.
