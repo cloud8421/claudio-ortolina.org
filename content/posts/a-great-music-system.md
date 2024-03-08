@@ -6,11 +6,11 @@ tags:
   - music
 summary: |
   A summary of my current music setup
-cover: "/img/arriving-somewhere/cover.jpg"
-coverAlt: "Detail of the art for Deadwing’s album cover, showing the silhouette of a woman looking at a lake."
-coverCaption: "Detail of the art for Deadwing’s album cover"
+cover: "/img/a-great-music-system/cover.png"
+coverAlt: "A photo of the music system I use showing the R5 player unit and the Pro-ject E1 turntable"
+coverCaption: "A photo of the music system I use showing the R5 player unit and the Pro-ject E1 turntable"
 images:
-  - /img/arriving-somewhere/cover.jpg
+  - /img/a-great-music-system/cover.png
 ---
 
 Over the last few months I had the opportunity to spend some time ironing out a music system that would marry analog and digital listening, log everything I play for recommendations and tracking of future releases, and collect all physical releases I own along with accompanying notes and reflections.
@@ -39,12 +39,16 @@ A priceless extra is that my 2-year old daughter loves CDs because they look lik
 
 ## Hardware
 
+{{< image src="/img/a-great-music-system/music-system.png" alt="A photo of the music system I use showing the R5 player unit and the Pro-ject E1 turntable" >}}
+
 There are a few moving parts:
 
 - A [Synology NAS](https://www.synology.com/en-uk) storing all digital files.
 - A [Ruark R5](https://www.ruarkaudio.com/products/r5-high-fidelity-music-system) music system (which can play CDs directly, and that has an integrated amplifier for the turntable). It’s been recently discontinued, which does make a bit uneasy, but the manufacturer still supports it and I reckon I can go on for a few years before having to evaluate a replacement.
 - A [Pro-Ject E1](https://www.project-audio.com/en/product/e1/) turntable, playing through the R5. Pricy, but it really just works.
 - A [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) with a [HifiBerry DAC2 Pro](https://www.hifiberry.com/shop/boards/hifiberry-dac2-pro/) hat, which allows the PI to play audio with great quality via the R5.
+
+{{< image src="/img/a-great-music-system/raspberry-pi.png" alt="A photo of the Raspberry Pi 4 with the HifiBerry DAC2 Pro hat" >}}
 
 None of this is cheap and there’s certainly more affordable options particularly if you’re able to source a different speakers/amp/turntable combo. The big advantage of using a Raspberry Pi (or an equivalent off the shelf solution) is that you separate “brain” from “muscle” (and the Pi + DAC hat are relatively cost-effective).
 
