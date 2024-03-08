@@ -1,14 +1,14 @@
 ---
-title: “A great music system”
+title: "A great music system"
 date: 2024-03-08T09:00:00+01:00
-description: “A summary of my current music setup”
+description: "A summary of my current music setup""
 tags:
   - music
 summary: |
   A summary of my current music setup
-cover: “/img/arriving-somewhere/cover.jpg”
-coverAlt: “Detail of the art for Deadwing’s album cover, showing the silhouette of a woman looking at a lake.”
-coverCaption: “Detail of the art for Deadwing’s album cover”
+cover: "/img/arriving-somewhere/cover.jpg"
+coverAlt: "Detail of the art for Deadwing’s album cover, showing the silhouette of a woman looking at a lake."
+coverCaption: "Detail of the art for Deadwing’s album cover"
 images:
   - /img/arriving-somewhere/cover.jpg
 ---
