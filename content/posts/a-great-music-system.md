@@ -1,7 +1,7 @@
 ---
 title: "A great music system"
 date: 2024-03-08T09:00:00+01:00
-description: "A summary of my current music setup""
+description: "A summary of my current music setup"
 tags:
   - music
 summary: |
