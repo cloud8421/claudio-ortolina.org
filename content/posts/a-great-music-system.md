@@ -67,6 +67,10 @@ When I play physical releases, I use the excellent [OpenScrobbler.com](OpenScrob
 I’m now trying out [Tidal](https://tidal.com) as a way to listen before buying, as it provides hi-fi quality, pays artists better than other platforms, and it’s deeply integrated into Plex (which means I don’t need to use a separate app, and can rely just on PlexAmp).
 
 If the Tidal experiment is a success, I’ll stop my subscription to Apple Music.
+
+When music is played by the Pi, the R5 system has no information on what's currently playing. I can read that on my phone, but for other people in the house I programmed a small automation that can be run with Siri, so that anyone can ask "What's playing?" and get a good answer. This took some lightweight reverse engineering of the PlexAmp web application, and I'm not expecting it to be rock solid as it's based on private APIs.
+
+In short, the PlexAmp web application polls an endpoint that returns a fairly comprehensive playing status with metadata information about the artist being played, both for local music in the Plex Server and on Tidal. As PlexAmp is written in Node.js, I wrote another small Node.js application to poll the same endpoint, and parse the information I need. I then created an iOS shortcut to hit my Node.js application, and read out the response in a human readable format. The shortcut is automatically available on all devices, and can be run via Siri by its name.
  
 ## Discovery
  
@@ -97,6 +101,7 @@ Each album becomes its own file with a set of metadata information I can query t
 As the data is stored as markdown files with a YAML front matter, there’s no risk of lock-in, and if I ever need to process the data for further analysis or visualization, I can write my own program that does that.
 
 Obsidian is available on all platforms I use, and syncs both data and settings without having to do anything special.
+
 ## Too much?
 
 I often ask myself if this system is too complicated, but I personally find that the experience of using it is simple at the expense of a reasonable amount of hidden complexity. I’m also aware that my requirements are many, and that’s because music is pretty much my only significant hobby. It still gives me the same joy I felt as a teenager, and still manages to surprise me even when I think I heard it all.
