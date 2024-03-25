@@ -94,7 +94,7 @@ Managing a physical collection is a relatively solved problem: with [Discogs](ht
 
 While this is great to track value and conditions of the item, it's not geared towards managing a collection with associated notes about the artist(s), or lyrics. It's also not possible to arbitrarily draw connections between albums.
 
-I'm currently trying out [Obsidian]([https://obsidian.md](https://obsidian.md/)) with the [MediaDB](https://github.com/mProjectsCode/obsidian-media-db-plugin) plugin. This lets me quickly add every album via the [MusicBrainz]([https://musicbrainz.org](https://musicbrainz.org/)) search API (without matching to an exact release, i.e. you can't pick the correct year/label/country/limited edition).
+I'm currently trying out [Obsidian]([https://obsidian.md](https://obsidian.md/)) with the [MediaDB](https://github.com/mProjectsCode/obsidian-media-db-plugin) plugin. This lets me quickly add every album via the [MusicBrainz](https://musicbrainz.org/) search API (without matching to an exact release, i.e. you can't pick the correct year/label/country/limited edition).
 
 Each album becomes its own file with a set of metadata information I can query through a couple of plugins. On top of that, I can write notes and associate albums with simple internal links.
 
