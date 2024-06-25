@@ -81,10 +81,10 @@ I prefer to monitor different sources, particularly when it comes to my core pre
 1. [Prog Magazine](https://www.loudersound.com/prog), which is an old-school monthly zine (both printed and digital) that covers pretty much anything happening in the progressive scene. I have a digital subscription, and read it on the iPad where I can take notes and add albums to a queue.
 2. The reviews RSS feed for [progarchives.com](progarchives.com), which is a fairly old progressive rock community website where people publish reviews of whatever album they can think of. The RSS format is great because I can read the review, see the cover art (which does a lot for me), and from that decide if I’m interested to explore more.
 3. The occasional visit to a few subreddits, just to get a feel of the community is looking at.
-4. Newsletters from specific record labels that tend to publish music I like (e.g. [Kscope]([https://kscopemusic.com](https://kscopemusic.com/)) or [Karisma Records]([https://www.karismarecords.no](https://www.karismarecords.no/))) 
-5. [The Album Years]([https://thealbumyears.com](https://thealbumyears.com/)) podcast with Steven Wilson and Tim Bowness, which provides a **very opinionated** list of significant music releases roughly from the 70s till the 90s. Only downside is that it’s very UK-centric, and I wish there were similar lists for other parts of the world.
+4. Newsletters from specific record labels that tend to publish music I like (e.g. [Kscope](https://kscopemusic.com)) or [Karisma Records](https://www.karismarecords.no/)) 
+5. [The Album Years](https://thealbumyears.com/) podcast with Steven Wilson and Tim Bowness, which provides a **very opinionated** list of significant music releases roughly from the 70s till the 90s. Only downside is that it’s very UK-centric, and I wish there were similar lists for other parts of the world.
 
-Once I’ve listened to something, and the artist is scrobbled to Last.fm, I’m able to monitor new releases via the excellent [MusicHarbor]([https://apps.apple.com/us/app/musicharbor-track-new-music/id1440405750](https://apps.apple.com/us/app/musicharbor-track-new-music/id1440405750)) iOS app. The app imports the list of artists I have on Last.fm, and keeps track of all releases by these artists. The import process is easily done manually via a few button presses in the app, and I do that once a month.
+Once I’ve listened to something, and the artist is scrobbled to Last.fm, I’m able to monitor new releases via the excellent [MusicHarbor](https://apps.apple.com/us/app/musicharbor-track-new-music/id1440405750) iOS app. The app imports the list of artists I have on Last.fm, and keeps track of all releases by these artists. The import process is easily done manually via a few button presses in the app, and I do that once a month.
 
 Each Friday (release day!) I get a new batch of albums to check  out, and I add whatever picks my attention to my queue.
 
@@ -94,7 +94,7 @@ Managing a physical collection is a relatively solved problem: with [Discogs](ht
 
 While this is great to track value and conditions of the item, it's not geared towards managing a collection with associated notes about the artist(s), or lyrics. It's also not possible to arbitrarily draw connections between albums.
 
-I'm currently trying out [Obsidian]([https://obsidian.md](https://obsidian.md/)) with the [MediaDB](https://github.com/mProjectsCode/obsidian-media-db-plugin) plugin. This lets me quickly add every album via the [MusicBrainz](https://musicbrainz.org/) search API (without matching to an exact release, i.e. you can't pick the correct year/label/country/limited edition).
+I'm currently trying out [Obsidian](https://obsidian.md/) with the [MediaDB](https://github.com/mProjectsCode/obsidian-media-db-plugin) plugin. This lets me quickly add every album via the [MusicBrainz](https://musicbrainz.org/) search API (without matching to an exact release, i.e. you can't pick the correct year/label/country/limited edition).
 
 Each album becomes its own file with a set of metadata information I can query through a couple of plugins. On top of that, I can write notes and associate albums with simple internal links.
 
