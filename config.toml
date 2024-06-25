@@ -3,6 +3,9 @@ languageCode = "en-gb"
 title = "Claudio Ortolina"
 theme = "hello-friend"
 paginate = 5
+copyright = """
+<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL" property="dct:title" href="https://claudio-ortolina.org">This website</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://claudio-ortolina.org">Claudio Ortolina</a> is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
+"""
 
 [params]
   contentTypeName = "posts"
@@ -51,9 +54,6 @@ paginate = 5
     subtitle = "My personal website"
     owner = "Claudio Ortolina"
     keywords = ""
-    copyright = """
-    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL" property="dct:title" href="https://claudio-ortolina.org">This website</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://claudio-ortolina.org">Claudio Ortolina</a> is licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a></p>
-    """
     menuMore = "Show more"
     readMore = "Read more"
     readOtherPosts = "Read other posts"
