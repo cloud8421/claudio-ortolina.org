@@ -45,7 +45,7 @@ paginate = 5
   site = ""
 
 [languages]
-  [languages.en]
+  [languages.en.params]
     languageName = "English"
     title = "Claudio Ortolina"
     subtitle = "My personal website"
