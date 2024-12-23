@@ -60,9 +60,9 @@ Setting up PlexAmp headless on the Pi required minimal work thanks to the excell
 
 With this setup, I can use any device to access my music collection, and play it through the Pi if I’m at home, or on-device if I’m out.
 
-The Plex Media Server instance is configured to scrobble to [Last.fm](Last.fm), so everything gets logged automatically no matter where I play it from.
+The Plex Media Server instance is configured to scrobble to [Last.fm](https://last.fm), so everything gets logged automatically no matter where I play it from.
 
-When I play physical releases, I use the excellent [OpenScrobbler.com](OpenScrobbler.com) web application to search for the album I’m playing, and scrobble it.
+When I play physical releases, I use the excellent [OpenScrobbler.com](https://openscrobbler.com) web application to search for the album I’m playing, and scrobble it.
 
 I’m now trying out [Tidal](https://tidal.com) as a way to listen before buying, as it provides hi-fi quality, pays artists better than other platforms, and it’s deeply integrated into Plex (which means I don’t need to use a separate app, and can rely just on PlexAmp).
 
@@ -79,7 +79,7 @@ Algorithmic recommendations are now very precise - no matter the platform. I’v
 I prefer to monitor different sources, particularly when it comes to my core preference, progressive rock:
  
 1. [Prog Magazine](https://www.loudersound.com/prog), which is an old-school monthly zine (both printed and digital) that covers pretty much anything happening in the progressive scene. I have a digital subscription, and read it on the iPad where I can take notes and add albums to a queue.
-2. The reviews RSS feed for [progarchives.com](progarchives.com), which is a fairly old progressive rock community website where people publish reviews of whatever album they can think of. The RSS format is great because I can read the review, see the cover art (which does a lot for me), and from that decide if I’m interested to explore more.
+2. The reviews RSS feed for [progarchives.com](https://progarchives.com), which is a fairly old progressive rock community website where people publish reviews of whatever album they can think of. The RSS format is great because I can read the review, see the cover art (which does a lot for me), and from that decide if I’m interested to explore more.
 3. The occasional visit to a few subreddits, just to get a feel of the community is looking at.
 4. Newsletters from specific record labels that tend to publish music I like (e.g. [Kscope](https://kscopemusic.com)) or [Karisma Records](https://www.karismarecords.no/)) 
 5. [The Album Years](https://thealbumyears.com/) podcast with Steven Wilson and Tim Bowness, which provides a **very opinionated** list of significant music releases roughly from the 70s till the 90s. Only downside is that it’s very UK-centric, and I wish there were similar lists for other parts of the world.
