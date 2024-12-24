@@ -2,6 +2,8 @@
 
 I'm Claudio Ortolina and this is the source code for [my website](https://claudio-ortolina.org), an old-fashioned blog where I post about all sorts of topics.
 
+Deployed via CloudFlare.
+
 # Setup
 
 The website is built with [Hugo](https://gohugo.io) and it uses the [Hello Friend](https://hugo-hello-friend.now.sh) theme without any customization.
