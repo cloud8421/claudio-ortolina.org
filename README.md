@@ -2,7 +2,7 @@
 
 I'm Claudio Ortolina and this is the source code for [my website](https://claudio-ortolina.org), an old-fashioned blog where I post about all sorts of topics.
 
-Deployed via CloudFlare.
+Deployed via CloudFlare Pages.
 
 # Setup
 
