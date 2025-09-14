@@ -1,0 +1,5 @@
+[tools]
+hugo = '0.128.0'
+
+[tasks.server]
+run = "hugo server"
