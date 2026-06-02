@@ -20,14 +20,22 @@ summary: |
   Reflections on building a music management application in Phoenix LiveView
 ---
 
-
-{{< image src="/img/building-my-own-music-library-application/commits-over-time.png" alt="A screenshot of the commit activity over time for my application, showing weekly work without interruptions." >}}
-
-Over the past year I've consistently worked on the most ambitious personal project I've ever tackled: an application to manage my physical music collection.
+Over the past year and a half I've consistently worked on the most ambitious personal project I've ever tackled: an application to manage my physical music collection.
 
 I wrote about collecting records and buying music [here](/posts/a-great-music-system/) - feel free to read that first for a rationale.
 
-I've recently crossed the 15k LOC mark (between implementation and tests) which is by no means a large application, but it's enough to start reflecting on the road so far and what lies ahead.
+It's now large enough to start reflecting on architecture, learnings, and the road ahead.
+
+## Use cases
+
+- Track records I have, with plenty of **useful metadata**.
+- Track records I want to buy.
+- Instead of adding record metadata by hand, leverage the [MusicBrainz](https://musicbrainz.org) API and dataset. When MusicBrainz doesn't have the record I need, I just create it there, and it's instantly available in my application.
+- Integration with [Last.fm](https://last.fm): scrobble records I listen to, and pull my scrobbling history for further analysis.
+- Add records by search or barcode scan (useful when buying bundles).
+- Group records by arbitrary criteria (I called them sets), e.g. all autographed ones.
+- Write notes about records and artists.
+- Ask any question about an artist or record, via a careful integration of AI.
 
 ## Goals
 
@@ -41,7 +49,7 @@ When I set out to build this application, I had a very precise vision:
 
 I picked Elixir, Phoenix and LiveView because frankly that's what I know and use at $WORK as well. I only picked SQLite as a database, which was a first for me, as I thought it would give me a boost in reaching goal 1. and 3.
 
-For almost 10 months, I had the application deployed on Fly.io, but decided then to move it to my own infra because I wanted an affordable, EU-hosted server with decent performance without sacrificing the developer experience of pushing, running CI and having the application deployed automatically. To do that, I picked a virtual server on Hetzner and deploy via Coolify.
+For almost 10 months, I had the application deployed on Fly.io, but decided then to move it to my own infra because I wanted an affordable, EU-hosted server with decent performance without sacrificing the developer experience of pushing, running CI and having the application deployed automatically. To do that, I picked a virtual server on Hetzner and deploy via Coolify, and the difference is night and day.
 
 In a parallel universe, I would have built this application in Swift and have it work on Mac, iOS, and iPadOS, using some sort of framework for data synchronization. The big benefit in that case is that I would be able to use the application offline. I don't know anything about that world though, and didn't have the bandwidth to skill up on it before building the application I wanted. Plus, I'm sure I would have had to compromise on quality, design or features due to my skill level.
 
@@ -58,42 +66,44 @@ I'm trying to follow a set of loose guidelines:
 
 ## Experimenting with AI-assisted development
 
-I tried a few times to experiment with AI-assisted development, specifically with Claude CLI, for very specific use cases:
+A personal project has also been an opportunity to experiment with LLM-assisted development, and I went through a couple of iterations on that front as well.
 
-1. I wanted to build something I had absolutely no knowledge of: for example, I added a vanity feature where the UI shows the dominant colors for each album cover. In that case, I asked Claude to research approaches, and write a fast-but-inaccurate extractor, and a slow-but-more-accurate one. It produced a summary of available techniques, and two implementations which seem to work reasonably well.
-2. I wanted to test an idea for a feature and see if I really needed it. I would know exactly how to build it, so a fast-tracked prototype would be desirable. When confirmed, I would start refactoring it for longer-term maintanability.
+Initially I used Claude Code (Opus 4.6, and Opus 4.7), with a set of community skills and a couple of custom skills, a curated CLAUDE.md file, and consistent use of plan mode. It was producing decent results primarily because it could leverage a solid architecture and existing patterns.
 
-I spent a few hours all in all trying to get prompt, usage rules, documentation etc. in shape for the LLM to work effectively and despite my best efforts I keep noticing the same problems:
+It allowed me to quickly experiment with some features that would have required me quite some time to implement, like color extraction from record covers.
 
-1. Too many code comments which really don't provide any value
+With time, the Claude Code harness started introducing more complexity I didn't need, and I found myself having to configure things to avoid excessive subagents use, or battling with the intrinsic inability to completely follow guardrails I wanted to set.
+
+That's when I decided to try using [Pi](https://pi.dev) because that way I could just create my own set of rules, tools, and process.
+
+Pi is essentially one step away from creating your own harness. It's completely hackable, can reload itself at runtime, and can modify itself.
+
+The combination of Pi with self-hosted infrastructure meant I could _very quickly_ build the tools I wanted, like a TUI for production errors that doubles down as a LLM tool. I can browser errors from the harness, and the LLM can do the same.
+
+For development of large changes, I'm using [Backlog.md](https://backlog.md/) because it keeps everything in the repo, and it lets me iterate with triage, planning, execution, and verification with full control over each step of the loop.
+
+Model-wise, I have Pi now setup to use either GPT 5.5 (sparingly) for complex plans, and Deepseek V4 (both Pro and Flash) for implementation and checklist-driven tasks (because they're quite fast and cheap).
+
+My own review is always necessary, and these are the things that used to creep up:
+
+1. Too many code comments
 2. Overly nested markup, with arbitrary stylistic choices that sometimes wouldn't match existing design, or would completely ignore mobile devices
 3. Additional unrequested functionality that complicates implementation without reason
 4. Inability to completely follow an agreed plan, particularly when it comes down to writing tests
 
-I suspect that part of the problem is on me - while I tried to iterate and produce better prompts (both as context/memory) and how precisely I instruct the LLM, I also find the process somehow tedious and devoid of the human aspect of working with another person.
+I've largely solved these problems by:
 
-In all instances, working with AI mapped loosely to this process:
-
-1. Explain feature or need - LLM gets it
-2. LLM comes up with a plan, and on my request writes it to a file
-3. I edit the plan, making sure that details are correct
-4. In a new conversation, the plan is read and executed
-
-In terms of results, usually we get to:
-
-1. An initial implementation which works on the surface, but errors out outside the golden path. Such errors are not visible at compile time. Even when writing tests, the LLM somehow misses key parts of the functionality.
-2. I fix enough issues to have a working vertical slice, so that I can test the feature and make sure it has value, and I like how it feels using it.
-3. Assuming I'm happy to keep it, I start replacing the guts of the implementation, reduce the markup, remove unnecessary extra little features, extra copy, etc.
-4. The end result is something I understand top to bottom, re-written between 30 to 50%, with a smaller surface.
+1. Creating a set of project-specific skills extracted by examples in the history of the codebase, specifically by pointing the LLM to relevant commit that show what to avoid (deleted in the commit diff) and what to prefer instead (added/changed in the diff).
+2. Maintaining 2 documents: the application architecture (which maps areas of the codebase, patterns, names, etc.) and project conventions, which establishes rules to follow when modifying code.
 
 ## SQLite
 
 I've been impressed by SQLite as it really packs a lot of punch despite the small size.
 
 1. I'm using the FTS5 extension to provide full-text search. The search index is created separately from the main data tables, kept up to date via triggers, and where needed data is passed through a unicode filter that lets me easily type "Bjorn" to find "Bjørn" (which is not as simple as it seems).
-2. I'm storing binary blobs for record covers directly in the database in a dedicated table, so that ALL of the data managed by the application is inside one single file (which now adds up to around 300MB).
+2. I'm storing binary blobs for record covers directly in the database in a dedicated table, so that ALL of the data managed by the application is inside one single file (which now adds up to around 800MB).
 3. For data that I pull from external APIs and where I'm allowed to, I usually keep copies of responses associated with each record, stored as JSON blobs in dedicated columns. This is helpful to quickly build additional features that leverages other parts of the data, and saves me from hitting external APIs more than once per record update. JSON support in SQLite is not as advanced as in Postgres, and the API is a little bit different, but there's pretty much everything you need to create/update/query JSON data.
-4. Backups, restore, pulling data from prod are a breeze - I just need to download a file.
+4. Backups are implemented via [Litestream](https://litestream.io/) running in a container sidecar, pointed at an S3 bucket on Hetzner. Data replicates every few minutes, and restoring it would imply downloading the resulting file and putting it where needed.
 
 ## The hard parts
 
