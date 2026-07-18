@@ -20,7 +20,7 @@ Looking at the entire process, I can safely say that onboarding has been smooth 
 
 There are, of course, lessons learnt from this process, which is exactly what this blog post is about.
 
-> This post was sponsored by digital product consultancy [DockYard](dockyard.com) to support the Elixir community and to encourage its members to share their stories.
+> This post was sponsored by digital product consultancy [DockYard](https://dockyard.com) to support the Elixir community and to encourage its members to share their stories.
 
 ## The organization
 
